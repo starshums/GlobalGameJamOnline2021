@@ -63,16 +63,25 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Movement () {
-        moveDirection = (playerModel.transform.forward.normalized * Input.GetAxis("Vertical"));
+        
+        // moveDirection = (playerModel.transform.forward.normalized * Input.GetAxis("Vertical"));
+        moveDirection = (transform.forward.normalized * Input.GetAxis("Vertical") + (playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
+        moveDirection = moveDirection.normalized * speed;
 
-        //moveDirection.y += Physics.gravity.y * Time.deltaTime;
         moveDirection.y -= 980f * Time.deltaTime;
-        controller.Move(moveDirection * speed * Time.deltaTime);
+        //moveDirection.y += Physics.gravity.y * Time.deltaTime;
+
+        // controller.Move(moveDirection * speed * Time.deltaTime);
+        controller.Move(moveDirection * Time.deltaTime);
+
 
         // Move player in different directions
-		if (Input.GetAxis ("Horizontal") != 0) {
-			Quaternion rotatePlayer = Quaternion.LookRotation ((playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
-            rotatePlayer.z = 0;
+		// if (Input.GetAxis ("Horizontal") != 0) {
+		if (Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0) {
+            // Quaternion rotatePlayer = Quaternion.LookRotation ((playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
+            Quaternion rotatePlayer = Quaternion.LookRotation((moveDirection.normalized * Input.GetAxis("Horizontal")));
+			
+            // rotatePlayer.z = 0;
 			playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, rotationSmoothness/100);
 		}
 
