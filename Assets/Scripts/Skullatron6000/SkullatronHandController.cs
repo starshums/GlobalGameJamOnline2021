@@ -7,19 +7,23 @@ public class SkullatronHandController : MonoBehaviour {
     private Vector3 defaultPosition = new Vector3(19f,2.5999999f,-26.7499981f);
     public Animator animator;
     private bool isAttacked = false;
+    public bool isBossFightStarted = false;
 
     void Start() {
          player = GameObject.FindGameObjectWithTag("Player").transform;
-         animator = GetComponent<Animator> ();
+         animator = GetComponent<Animator>();
     }
 
     void Update() {
         // InvokeRepeating("AttackSlamPlayer", 8f, 8f);
-        AttackSlamPlayer();
+        if(isBossFightStarted) {
+            AttackSlamPlayer();
+        }
     }
 
     private void AttackSlamPlayer() {
         if(!isAttacked) {
+            animator.SetTrigger("Attack");
             StartCoroutine(MoveTheHand(transform, transform.position, player.position));
         }
     }
@@ -45,6 +49,7 @@ public class SkullatronHandController : MonoBehaviour {
 
     private IEnumerator GoBackHandPlease() {
         isAttacked = true;
+        animator.SetTrigger("StandBy");
         StartCoroutine(MoveTheHand(transform, transform.position, defaultPosition));
         yield return new WaitForSeconds(10f);
         isAttacked = false;
