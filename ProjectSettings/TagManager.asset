@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Core
   - Skullatron6000Hand
+  - BombmanEnemy
+  - SkullMinionEnemy
   layers:
   - Default
   - TransparentFX

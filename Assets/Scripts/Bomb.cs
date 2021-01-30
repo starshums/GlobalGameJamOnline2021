@@ -71,6 +71,7 @@ public class Bomb : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                string nearbyObjectTag = nearbyObject.tag;
                 if (isFireBomb)
                 {
                     //add force
@@ -83,7 +84,7 @@ public class Bomb : MonoBehaviour
                     }
 
                     //TO BREAK THE WOODENBOXES
-                    if (nearbyObject.CompareTag("Woodenbox"))
+                    if (nearbyObjectTag=="Woodenbox")
                     {
                         WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
                         if (box) box.Break();
@@ -91,7 +92,7 @@ public class Bomb : MonoBehaviour
                 }
                 else if (isFreezeBomb)
                 {
-                    if (nearbyObject.CompareTag("Enemy"))
+                    if (nearbyObjectTag == "BombmanEnemy" || nearbyObjectTag == "SkullMinionEnemy")
                     {
                         EnemyController enemyController = nearbyObject.GetComponent<EnemyController>();
                         enemyController.ToggleSpecialCondition(freezeTimer);
@@ -100,7 +101,7 @@ public class Bomb : MonoBehaviour
                 }
                 else if (isSleepBomb)
                 {
-                    if (nearbyObject.CompareTag("Enemy"))
+                    if (nearbyObjectTag == "BombmanEnemy" || nearbyObjectTag == "SkullMinionEnemy")
                     {
                         EnemyController enemyController = nearbyObject.GetComponent<EnemyController>();
                         enemyController.ToggleSpecialCondition(sleepTimer);
