@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3468950383588518098, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+      propertyPath: rotationSmoothness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4012309810164643687, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387990580578086365, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_Name
-      value: PlayerCameraFollow Variant
+      value: PlayerCameraFollow2
       objectReference: {fileID: 0}
     - target: {fileID: 6081346797060427721, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.x
@@ -61,11 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6081346797060427721, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000004159644
+      value: -0.000000004159644
       objectReference: {fileID: 0}
     - target: {fileID: 6081346797060427721, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -9.228144e-10
+      value: 9.228144e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6789425204030521257, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.x
@@ -73,15 +77,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6789425204030521257, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000004159644
+      value: -0.000000004159644
       objectReference: {fileID: 0}
     - target: {fileID: 6789425204030521257, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -9.228144e-10
+      value: 9.228144e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781293360824308942, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+      propertyPath: m_YawDamping
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7781293360824308942, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_BindingMode
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
