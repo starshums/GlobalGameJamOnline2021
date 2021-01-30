@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Battery
   - Woodenbox
+  - Enemy
   layers:
   - Default
   - TransparentFX

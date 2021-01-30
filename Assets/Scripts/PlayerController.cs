@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     [Header ("Bomb Settings")]
     public GameObject fireBombPrefab;
     public GameObject freezeBombPrefab;
+    public GameObject sleepBombPrefab;
+
 
     public Transform bombSpawnLocation;
     [SerializeField] float bombThrowForce = 350f;
@@ -112,6 +114,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E))
         {
             bombToThrow = freezeBombPrefab;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            bombToThrow = sleepBombPrefab;
         }
 
         if (bombToThrow != null)
