@@ -72,6 +72,11 @@ public class Bomb : MonoBehaviour
                 //add force
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //damage
+                Health healthScript = nearbyObject.GetComponent<Health>();
+                if (healthScript != null)
+                {
+                    healthScript.ChangeHealth(-2);
+                }
 
                 //shake the camera
                 CameraShaker.instance.ShakeCamera(1,2);
