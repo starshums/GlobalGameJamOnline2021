@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
         }
 
         agent.speed = agentSpeed;
-        
+
         if (!isSkullMinionEnemy)
         {
             getPatrolPoints();
@@ -47,17 +47,16 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isSkullMinionEnemy)
+        if (!isSkullMinionEnemy && !IsPlayerClose())
         {
-            CheckIfReachedTargetPatrolPoint();
-            if (!isTargetPointSet)
-            {
-                SetTargetPoint();
-            }
+                CheckIfReachedTargetPatrolPoint();
+                if (!isTargetPointSet)
+                {
+                    SetTargetPoint();
+                }
         }
         Movement();
 
-        
         if (isUnderSpecialCondition)
         {
             specialConditionCounter -= Time.deltaTime;
@@ -102,11 +101,12 @@ public class EnemyController : MonoBehaviour
         targetPoint = patrolPoints[Random.Range(0, totalNumberOfPatrolPoints)];
         isTargetPointSet = true;
     }
+
     void Movement()
     {
-        agent.SetDestination(targetPoint.position);
+        if (!IsPlayerClose()) agent.SetDestination(targetPoint.position);
     }
-    
+
     void CheckIfReachedTargetPatrolPoint()
     {
         float distance = Vector3.Distance(transform.position, targetPoint.position);
@@ -116,11 +116,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    bool IsPlayerClose()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) < 7.0f;
+    }
+
+
+
     public void ToggleSpecialCondition(float counter)
     {
         isUnderSpecialCondition = true;
         specialConditionCounter = counter;
     }
+
     void SleepCondition()
     {
         agent.speed = 0;
@@ -137,7 +145,7 @@ public class EnemyController : MonoBehaviour
 
     void NormalCondition()
     {
-        
+
         agent.speed = agentSpeed;
         //rb.constraints = RigidbodyConstraints.None;
         isSleeping = false;

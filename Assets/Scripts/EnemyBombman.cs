@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyBombman : MonoBehaviour
 {
     Rigidbody rb;
@@ -35,10 +37,11 @@ public class EnemyBombman : MonoBehaviour
 
     void CheckPlayerDistance()
     {
-        if (Vector3.Magnitude(player.gameObject.transform.position - transform.position) < ReactDistance)
+        if (Vector3.Magnitude(player.gameObject.transform.position - transform.position) < ReactDistance && !canExplode)
         {
             animController.SetBool("Attack", true);
             rb.AddForce(Vector3.up.normalized * JumpForce, ForceMode.Force);
+            GetComponent<NavMeshAgent>().enabled = false;
             StartCoroutine(BombDive());
         }
     }
@@ -52,7 +55,6 @@ public class EnemyBombman : MonoBehaviour
 
         Vector3 direction = player.gameObject.transform.position - transform.position;
         LockTarget(player.gameObject.transform.position);
-
         yield return new WaitForSeconds(0.5f);
         rb.AddForce(direction.normalized * 150f, ForceMode.Impulse);
         canExplode = true;
