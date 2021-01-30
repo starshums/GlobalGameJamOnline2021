@@ -405,11 +405,11 @@ RectTransform:
   m_Father: {fileID: 287474280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 267, y: 0.000015258789}
-  m_SizeDelta: {x: -571.2766, y: -208.8502}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -183, y: 15}
+  m_SizeDelta: {x: 158.0827, y: 80.589294}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &958696086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,9 +461,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 23c31b211fe4b834a9f62598500fcc01, type: 2}
-  X_space_inbetween: 50
+  x_start: 40
+  y_start: 42
+  X_space_inbetween: 70
   Y_space_inbetween: 6
-  Column: 35
+  Column: 2
 --- !u!1 &1402257223
 GameObject:
   m_ObjectHideFlags: 0
