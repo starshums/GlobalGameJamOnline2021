@@ -7,6 +7,8 @@ TagManager:
   - Battery
   - Woodenbox
   - Enemy
+  - Core
+  - Skullatron6000Hand
   layers:
   - Default
   - TransparentFX
