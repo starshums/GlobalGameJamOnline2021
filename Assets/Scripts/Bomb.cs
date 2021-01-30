@@ -72,6 +72,18 @@ public class Bomb : MonoBehaviour
                 //add force
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //damage
+                Health healthScript = nearbyObject.GetComponent<Health>();
+                if (healthScript != null)
+                {
+                    healthScript.ChangeHealth(-2);
+                }
+
+                //TO BREAK THE WOODENBOXES
+                if (nearbyObject.CompareTag("Woodenbox")) 
+                {
+                    WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
+                    if (box) box.Break();
+                }
 
                 //shake the camera
                 CameraShaker.instance.ShakeCamera(1,2);
