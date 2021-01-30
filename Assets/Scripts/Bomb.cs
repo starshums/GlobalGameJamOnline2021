@@ -22,7 +22,12 @@ public class Bomb : MonoBehaviour
     public float delay = 3f;
     public float countdown;
 
+    //camera shake properties
+    public float CameraShakeIntensity = 2f;
+    public float CameraShakeTimer = 1f;
+
     bool hasExploded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,9 +72,10 @@ public class Bomb : MonoBehaviour
                 //add force
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //damage
+
+                //shake the camera
+                CameraShaker.instance.ShakeCamera(1,2);
             }
-
-
         }
 
         //destroy grenade
