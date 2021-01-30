@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: e076105b5bda8e34696e840c40c976fd
+guid: 655b815cef391104bad7b3ff7a2894d0
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3359327595560447268
+    second: Armature|Fist_Slam
+  - first:
+      74: 7184236504228568209
+    second: Armature|Hand_Slam
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -85,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

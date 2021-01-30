@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
 
         GameObject bombToThrow = null;
 
-        if (Input.GetButtonDown ("Bomb")) 
+        if (Input.GetMouseButtonDown(0))
         {
             bombToThrow = fireBombPrefab;
         }
