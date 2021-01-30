@@ -6,10 +6,16 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 10f;
     public float health;
+
     private void Start()
     {
-        health = maxHealth;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
     }
+
     public void ChangeHealth(int changeInHealth)
     {
         health += changeInHealth;

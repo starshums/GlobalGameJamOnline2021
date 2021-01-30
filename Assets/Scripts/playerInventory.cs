@@ -9,12 +9,10 @@ public class playerInventory : MonoBehaviour
     [Header("Inventory Settings")]
     public Inventory inventory;
 
-  
-
     private void Update()
     {
-        enterScene2();
-        enterScene3();
+        //enterScene2();
+        //enterScene3();
     }
 
     //in order for the player to enter into "scene 2" they will need 1 memory shard
