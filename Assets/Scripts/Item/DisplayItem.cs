@@ -6,7 +6,12 @@ using TMPro;
 public class DisplayItem : MonoBehaviour
 {
     public Inventory inventory;
+    
+    //this will help align the UI
+    public int x_start;
+    public int y_start;
 
+    //inbetween the icons
     public int X_space_inbetween;
     public int Y_space_inbetween;
     public int Column;
@@ -35,6 +40,7 @@ public class DisplayItem : MonoBehaviour
     }
     public Vector3 GetPosition(int i)
     {
-        return new Vector3(X_space_inbetween * (i %  Column), (-Y_space_inbetween * (i/Column)), 0f);
+        
+        return new Vector3(x_start + (X_space_inbetween * (i % Column)), y_start + (-Y_space_inbetween * (i/Column)), 0f);
     }
 }
