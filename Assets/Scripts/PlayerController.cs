@@ -146,6 +146,10 @@ public class PlayerController : MonoBehaviour {
             {
                 hit.gameObject.GetComponent<Health>().ChangeHealth(-1);
             }
+            else
+            {
+                healthScript.ChangeHealth(-1);
+            }
         }
     }
 }

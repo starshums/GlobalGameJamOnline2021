@@ -17,6 +17,9 @@ public class EnemyBombman : MonoBehaviour
     public bool canExplode = false;
     public bool targetLocked = true;
 
+    public float damageRadius = 7f;
+    public float explosionForce = 500f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +64,9 @@ public class EnemyBombman : MonoBehaviour
         {
             Instantiate(explosionEffect, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), explosionEffect.transform.rotation);
 
+            //apply damage to nearby players
+            DamageAfterExplosion();
+
             CameraShaker.instance.ShakeCamera(1, 3);
             Destroy(this.gameObject);
         }
@@ -70,7 +76,34 @@ public class EnemyBombman : MonoBehaviour
     {
         if (targetLocked) Instantiate(targetDecal, new Vector3(position.x, position.y, position.z), targetDecal.gameObject.transform.rotation);
         targetDecal.GetComponent<ObjectDestroyer>().DestroyTimer = 2f;
-        
+
         targetLocked = false;
+    }
+
+    void DamageAfterExplosion()
+    {
+        Collider[] nearbyObjectsColliders = Physics.OverlapSphere(transform.position, damageRadius);
+        foreach (Collider nearbyObject in nearbyObjectsColliders)
+        {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                //add force
+                rb.AddExplosionForce(explosionForce, transform.position, damageRadius);
+                //damage
+                Health healthScript = nearbyObject.GetComponent<Health>();
+                if (healthScript != null)
+                {
+                    healthScript.ChangeHealth(-2);
+                }
+
+                //TO BREAK THE WOODENBOXES
+                if (nearbyObject.CompareTag("Woodenbox"))
+                {
+                    WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
+                    if (box) box.Break();
+                }
+            }
+        }
     }
 }
