@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 281573497688399952, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_TagString
-      value: Battery
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 622492039221738218, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_RootOrder
@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 281573497688399952, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_TagString
-      value: Battery
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 622492039221738218, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_RootOrder
@@ -338,7 +338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739893441}
-  m_LocalRotation: {x: 0.238988, y: -0.0000000058867204, z: 0.0000000014488392, w: 0.97102255}
+  m_LocalRotation: {x: 0.23898801, y: -0.000000020797769, z: 0.0000000051187454, w: 0.97102255}
   m_LocalPosition: {x: 0, y: 7.32, z: -13.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -560,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 281573497688399952, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_TagString
-      value: Battery
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 622492039221738218, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_RootOrder
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 281573497688399952, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_TagString
-      value: Battery
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 622492039221738218, guid: 71c73edb837f7a04b837a63dfe67543a, type: 3}
       propertyPath: m_RootOrder
@@ -800,15 +800,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.238988
+      value: 0.23898801
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000058867204
+      value: -0.000000020797769
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000014488392
+      value: 0.0000000051187454
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
