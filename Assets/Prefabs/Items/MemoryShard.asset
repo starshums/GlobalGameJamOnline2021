@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MemoryShard
   m_EditorClassIdentifier: 
   itemName: shards
-  itemGameObject: {fileID: 0}
+  itemPrefab: {fileID: 1567879114774450000, guid: 25bd6560fd237b544bf5b17788138e2a, type: 3}
+  description: 
   MyMemoryType: 0
