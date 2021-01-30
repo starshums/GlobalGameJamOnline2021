@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   Container:
-  - item: {fileID: 0}
-    stackAmount: 0
-  - item: {fileID: 0}
-    stackAmount: 0
+  - item: {fileID: 11400000, guid: db063cd57e7f8f54dba4280400c36351, type: 2}
+    stackAmount: 1
