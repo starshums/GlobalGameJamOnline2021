@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour {
     Animator animator;
     public GameObject playerModel;
 
+    [Header("Dash move Settings")]
+    float maxDashEnergy = 3f;
+    float dashEnergy;
+    bool canDash = false;
+    bool isDashing = false;
+    public ParticleSystem dashPS;
+
     [Header ("Bomb Settings")]
     public GameObject fireBombPrefab;
     public GameObject freezeBombPrefab;
@@ -19,14 +26,29 @@ public class PlayerController : MonoBehaviour {
 
     [Header("Health settings")]
     public Health healthScript;
+
     // Start is called before the first frame update
-    void Start () {
+    void Start () 
+    {
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator> ();
+
+        dashEnergy = maxDashEnergy;
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update () 
+    {
+        if (!isDashing)
+        {
+            dashEnergy += Time.deltaTime;
+            if (dashEnergy > maxDashEnergy)
+            {
+                dashEnergy = maxDashEnergy;
+                canDash = true;
+            }
+        }
+        
         Movement ();
         ThrowBomb ();
     }
@@ -51,10 +73,34 @@ public class PlayerController : MonoBehaviour {
 			playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, 0.3f);
 		}
 
+        if (Input.GetKey(KeyCode.F) && canDash==true)
+        {
+            Dash();
+            isDashing = true;
+        }
+        else
+        {
+            if (dashPS.isPlaying)
+            {
+                dashPS.Stop();
+            }
+            isDashing = false;
+        }
         // Running & Idle Animations
         animator.SetFloat("Speed", (Mathf.Abs(Input.GetAxis ("Vertical")) + Mathf.Abs(Input.GetAxis ("Horizontal"))));
     }
 
+    void Dash()
+    {
+        controller.Move(moveDirection * 7f * Time.deltaTime); 
+        dashEnergy -= (Time.deltaTime * 12);
+        dashPS.Play();
+
+        if (dashEnergy <= 0.5)
+        {
+            canDash = false;
+        }
+    }
     void ThrowBomb () {
 
         GameObject bombToThrow = null;
@@ -87,6 +133,13 @@ public class PlayerController : MonoBehaviour {
         {
             healthScript.ChangeHealth(1);
             Destroy(hit.gameObject);
+        }
+        if (hit.transform.CompareTag("Enemy"))
+        {
+            if (isDashing)
+            {
+                hit.gameObject.GetComponent<Health>().ChangeHealth(-1);
+            }
         }
     }
 }
