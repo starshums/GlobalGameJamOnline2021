@@ -7,6 +7,8 @@ public class Battery : MonoBehaviour
     private Vector3 currPosition;
     private Vector3 spawnlocation;
 
+    [SerializeField] GameObject assetModel;
+
     [SerializeField] GameObject player;
 
     [Header("Sin Battery Movement")]
@@ -25,15 +27,14 @@ public class Battery : MonoBehaviour
     {
         currPosition = transform.position;
         battery_collider = GetComponent<Collider>();
-        battery_collider.isTrigger = false;
-
+        
     }
 
  
     void Update()
     {
         //using sine , make the battery move up and down 
-        transform.position = currPosition + transform.up * Mathf.Sin(Time.time * speed + offset) * magnitude;
+        assetModel.transform.position = currPosition + transform.up * Mathf.Sin(Time.time * speed + offset) * magnitude;
 
         //Find the player to spawn on it
          spawnlocation = player.transform.position;

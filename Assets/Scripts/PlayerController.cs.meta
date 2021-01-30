@@ -3,7 +3,12 @@ guid: 659b152d9cf5c304fb86218262cb691f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerModel: {instanceID: 0}
+  - fireBombPrefab: {instanceID: 0}
+  - freezeBombPrefab: {instanceID: 0}
+  - bombSpawnLocation: {instanceID: 0}
+  - inventory: {fileID: 11400000, guid: 23c31b211fe4b834a9f62598500fcc01, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

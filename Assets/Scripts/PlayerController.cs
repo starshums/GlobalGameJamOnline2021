@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     public Transform bombSpawnLocation;
     [SerializeField] float bombThrowForce = 350f;
 
+
     // Start is called before the first frame update
     void Start () {
         controller = GetComponent<CharacterController>();
