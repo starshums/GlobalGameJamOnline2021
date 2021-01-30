@@ -17,4 +17,6 @@ public class WoodenBoxHandler : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
+
+    //JUST A COMMENT FOR GITHUB / DISCORD INTEGRATION TEST
 }
