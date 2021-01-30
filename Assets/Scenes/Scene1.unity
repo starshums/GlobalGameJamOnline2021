@@ -481,6 +481,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1193769189029097732, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615374241171889451, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615374241171889451, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7191085540030979652, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -524,6 +536,14 @@ PrefabInstance:
     - target: {fileID: 7191085540030979652, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530034649809995001, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530034649809995001, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7530034649809995006, guid: 3181d82fd610e12449953a71019fdee4, type: 3}
       propertyPath: m_Name
