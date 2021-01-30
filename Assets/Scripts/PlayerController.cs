@@ -140,7 +140,18 @@ public class PlayerController : MonoBehaviour {
             healthScript.ChangeHealth(1);
             Destroy(hit.gameObject);
         }
-        if (hit.transform.CompareTag("Enemy"))
+        if (hit.transform.CompareTag("BombmanEnemy"))
+        {
+            if (isDashing)
+            {
+                hit.gameObject.GetComponent<Health>().ChangeHealth(-2);
+            }
+            else
+            {
+                healthScript.ChangeHealth(-1);
+            }
+        }
+        if (hit.transform.CompareTag("SkullMinionEnemy"))
         {
             if (isDashing)
             {

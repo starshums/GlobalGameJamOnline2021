@@ -895,6 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b64f1a3a5dce0444b04ef44b08314f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentSpeed: 3.5
+  isSkullMinionEnemy: 0
+  player: {fileID: 0}
   isFrozen: 0
   isSleeping: 0
   enemySleepingPS: {fileID: 25200989}
@@ -1013,6 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  health: 0
 --- !u!1001 &1672712625
 PrefabInstance:
   m_ObjectHideFlags: 0
