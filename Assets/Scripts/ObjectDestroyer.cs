@@ -6,7 +6,8 @@ public class ObjectDestroyer : MonoBehaviour
 {
     public float DestroyTimer = 2f;
 
-    private void Start() {
+    private void Start()
+    {
         Destroy(this.gameObject, DestroyTimer);
     }
 }
