@@ -8,6 +8,8 @@ public class Bomb : MonoBehaviour
     public bool isFireBomb = false;
     public bool isFreezeBomb = false;
     public bool isSleepBomb = false;
+    public float freezeTimer = 8f;
+    public float sleepTimer = 10f;
 
     [Header("Explosion PS")]
     public GameObject boomPS;
@@ -69,26 +71,49 @@ public class Bomb : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                //add force
-                rb.AddExplosionForce(explosionForce, transform.position, radius);
-                //damage
-                Health healthScript = nearbyObject.GetComponent<Health>();
-                if (healthScript != null)
+                if (isFireBomb)
                 {
-                    healthScript.ChangeHealth(-2);
+                    //add force
+                    rb.AddExplosionForce(explosionForce, transform.position, radius);
+                    //damage
+                    Health healthScript = nearbyObject.GetComponent<Health>();
+                    if (healthScript != null)
+                    {
+                        healthScript.ChangeHealth(-2);
+                    }
+
+                    //TO BREAK THE WOODENBOXES
+                    if (nearbyObject.CompareTag("Woodenbox"))
+                    {
+                        WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
+                        if (box) box.Break();
+                    }
+                }
+                else if (isFreezeBomb)
+                {
+                    if (nearbyObject.CompareTag("Enemy"))
+                    {
+                        EnemyController enemyController = nearbyObject.GetComponent<EnemyController>();
+                        enemyController.ToggleSpecialCondition(freezeTimer);
+                        enemyController.isFrozen = true;
+                    }
+                }
+                else if (isSleepBomb)
+                {
+                    if (nearbyObject.CompareTag("Enemy"))
+                    {
+                        EnemyController enemyController = nearbyObject.GetComponent<EnemyController>();
+                        enemyController.ToggleSpecialCondition(sleepTimer);
+                        enemyController.isSleeping = true;
+                    }
                 }
 
-                //TO BREAK THE WOODENBOXES
-                if (nearbyObject.CompareTag("Woodenbox")) 
-                {
-                    WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
-                    if (box) box.Break();
-                }
-
-                //shake the camera
-                CameraShaker.instance.ShakeCamera(1,2);
+                
             }
         }
+
+        //shake the camera
+        CameraShaker.instance.ShakeCamera(1, 2);
 
         //destroy grenade
         Destroy(gameObject);
