@@ -6,5 +6,4 @@ public class ItemObject : MonoBehaviour
 {
     public Item itemObj;
 
-   
 }
