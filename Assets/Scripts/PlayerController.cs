@@ -40,9 +40,10 @@ public class PlayerController : MonoBehaviour {
     void Movement () {
         moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
 		moveDirection = moveDirection.normalized * speed;
-        
-		moveDirection.y += Physics.gravity.y * Time.deltaTime;
-		controller.Move( moveDirection * Time.deltaTime );
+
+        //moveDirection.y += Physics.gravity.y * Time.deltaTime;
+        moveDirection.y -= 980f * Time.deltaTime;
+        controller.Move( moveDirection * Time.deltaTime );
 
         // Move player in different directions
 		if (Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0) {
