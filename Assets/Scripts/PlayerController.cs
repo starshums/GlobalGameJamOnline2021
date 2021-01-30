@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour {
     public Transform bombSpawnLocation;
     [SerializeField] float bombThrowForce = 350f;
 
-
+    [Header("Health settings")]
+    public Health healthScript;
     // Start is called before the first frame update
     void Start () {
         controller = GetComponent<CharacterController>();
@@ -75,6 +76,15 @@ public class PlayerController : MonoBehaviour {
             {
                 rb.AddForce(bombSpawnLocation.forward * bombThrowForce);
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Battery"))
+        {
+            healthScript.ChangeHealth(1);
+            Destroy(collision.gameObject);
         }
     }
 }
