@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class WoodenBoxHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject[] pieces;
 
-    // Update is called once per frame
-    void Update()
+    public void Break()
     {
-        
+        foreach(GameObject piece in pieces)
+        {
+            piece.transform.parent = null;
+            piece.AddComponent<Rigidbody>();
+            piece.GetComponent<Rigidbody>().mass = 50f;
+            piece.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        Destroy(this.gameObject);
     }
 }

@@ -78,6 +78,13 @@ public class Bomb : MonoBehaviour
                     healthScript.ChangeHealth(-2);
                 }
 
+                //TO BREAK THE WOODENBOXES
+                if (nearbyObject.CompareTag("Woodenbox")) 
+                {
+                    WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
+                    if (box) box.Break();
+                }
+
                 //shake the camera
                 CameraShaker.instance.ShakeCamera(1,2);
             }
