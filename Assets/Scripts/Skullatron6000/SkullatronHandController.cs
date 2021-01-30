@@ -12,27 +12,31 @@ public class SkullatronHandController : MonoBehaviour
 
     public int AttacksCounter = 0;
     public int MaxAttacks = 5;
+    public bool isBossDead = false;
 
-    void Start()
-    {
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         AttacksCounter = 0;
     }
 
-    void Update()
-    {
+    void Update() {
         // InvokeRepeating("AttackSlamPlayer", 8f, 8f);
-        if (isBossFightStarted)
-        {
-            if (AttacksCounter < MaxAttacks)
-            {
-                AttackSlamPlayer();
-            }
-            else
-            {
+        if (isBossFightStarted) {
+            if(!isBossDead) {
+                if (AttacksCounter < MaxAttacks) {
+                    AttackSlamPlayer();
+                }
+                else
+                {
+                    StartCoroutine("GoBackHandPlease");
+                }
+            } else {
                 StartCoroutine("GoBackHandPlease");
+                Debug.Log("Boss is dead.");
+                // Teleport far away or (Death animation)
             }
+            
         }
     }
 
@@ -62,13 +66,11 @@ public class SkullatronHandController : MonoBehaviour
         obj.position = endPosition;
     }
 
-    public void CollisionDetected(HandCollisionTrigger handCollisionTrigger)
-    {
+    public void CollisionDetected(HandCollisionTrigger handCollisionTrigger) {
         StartCoroutine("GoBackHandPlease");
     }
 
-    private IEnumerator GoBackHandPlease()
-    {
+    private IEnumerator GoBackHandPlease() {
         StopCoroutine("MoveTheHand");
         AttacksCounter = 0;
         isAttacked = true;
