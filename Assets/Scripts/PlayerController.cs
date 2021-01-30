@@ -79,12 +79,13 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collision.transform.CompareTag("Battery"))
+        if (hit.transform.CompareTag("Battery"))
         {
             healthScript.ChangeHealth(1);
-            Destroy(collision.gameObject);
+            Destroy(hit.gameObject);
         }
     }
 }

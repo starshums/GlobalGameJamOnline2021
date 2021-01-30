@@ -13,11 +13,15 @@ public class Health : MonoBehaviour
     public void ChangeHealth(int changeInHealth)
     {
         health += changeInHealth;
-        Mathf.Clamp(health, 0, maxHealth);
+        if (health > 10)
+        {
+            health = 10;
+        }
         Debug.Log("Health: " + health);
 
         if (health <= 0)
         {
+            health = 0;
             Debug.Log(transform.name + " is destroyed");
             Death();
         }
