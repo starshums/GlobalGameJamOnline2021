@@ -18,7 +18,7 @@ public class Bomb : MonoBehaviour
     GameObject explosionEffect;
 
 
-    public float radius = 5f;
+    public float radius = 7f;
     public float explosionForce = 500f;
 
     public float delay = 3f;
