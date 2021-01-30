@@ -13,5 +13,4 @@ public class memory_ScriptableObj : Item
 
     public memoryType MyMemoryType;
 
-   
 }
