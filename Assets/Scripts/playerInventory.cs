@@ -7,15 +7,16 @@ public class playerInventory : MonoBehaviour
     [Header("Inventory Settings")]
     public Inventory inventory;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter(Collider collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+      
+       var item = collision.GetComponent<ItemObject>();
+       if(item)
+       {
+            inventory.AddItem(item.itemobject, 1);
+            Destroy(collision.gameObject);
+       }
+           
+       
+     }
 }
