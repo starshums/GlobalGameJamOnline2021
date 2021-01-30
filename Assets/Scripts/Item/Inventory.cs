@@ -21,7 +21,7 @@ public class Inventory : ScriptableObject
                 break;
             }
         }
-        if (notEmpty == false)
+        if (!notEmpty)
         {
             Container.Add(new InventorySlot(_item, _stackAmount));
         }
