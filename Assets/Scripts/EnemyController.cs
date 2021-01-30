@@ -7,6 +7,9 @@ public class EnemyController : MonoBehaviour
 {
     Rigidbody rb;
     NavMeshAgent agent;
+    public float agentSpeed = 3.5f;
+    public bool isSkullMinionEnemy = false;
+    public GameObject player;
 
     public bool isFrozen = false;
     public bool isSleeping = false;
@@ -23,19 +26,34 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        player = FindObjectOfType<PlayerController>().gameObject;
         agent = GetComponent<NavMeshAgent>();
-        getPatrolPoints();
-        SetTargetPoint();
+        rb = GetComponent<Rigidbody>();
+
+        if (isSkullMinionEnemy)
+        {
+            SkullMinionEnemySettings();
+        }
+
+        agent.speed = agentSpeed;
+        
+        if (!isSkullMinionEnemy)
+        {
+            getPatrolPoints();
+            SetTargetPoint();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckIfReachedTargetPatrolPoint();
-        if (!isTargetPointSet)
+        if (!isSkullMinionEnemy)
         {
-            SetTargetPoint();
+            CheckIfReachedTargetPatrolPoint();
+            if (!isTargetPointSet)
+            {
+                SetTargetPoint();
+            }
         }
         Movement();
 
@@ -64,6 +82,12 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    void SkullMinionEnemySettings()
+    {
+        agentSpeed = 3f;
+        targetPoint = player.transform;
+        isTargetPointSet = true;
+    }
     void getPatrolPoints()
     {
         totalNumberOfPatrolPoints = patrolPointsParent.childCount;
@@ -100,19 +124,22 @@ public class EnemyController : MonoBehaviour
     void SleepCondition()
     {
         agent.speed = 0;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
+        //rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void FrozenCondition()
     {
         agent.speed = 0;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
+        //rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void NormalCondition()
     {
-        agent.speed = 3.5f;
-        rb.constraints = RigidbodyConstraints.None;
+        
+        agent.speed = agentSpeed;
+        //rb.constraints = RigidbodyConstraints.None;
         isSleeping = false;
         isFrozen = false;
         isUnderSpecialCondition = false;
