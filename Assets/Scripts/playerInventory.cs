@@ -13,7 +13,7 @@ public class playerInventory : MonoBehaviour
        var item = collision.GetComponent<ItemObject>();
        if(item)
        {
-            inventory.AddItem(item.itemobject, 1);
+            inventory.AddItem(item.itemObj, 1);
             Destroy(collision.gameObject);
        }
            

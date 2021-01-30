@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Default_Battery
   m_EditorClassIdentifier: 
   itemName: Battery
-  itemGameObject: {fileID: 1713126091938152402, guid: d9cfedb8180a88141ad3603f1cafa376, type: 3}
+  itemPrefab: {fileID: 9108134683336600943, guid: ec634d4139946eb498259494b61ba1cb, type: 3}
+  description: 
   MyPowerUpType: 0
