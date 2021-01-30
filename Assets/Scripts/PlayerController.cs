@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     [Header ("Player Movement Settings")]
     private Vector3 moveDirection;
     [SerializeField] float speed = 10f;
+    [SerializeField] float rotationSmoothness = 2f;
     private CharacterController controller;
     Animator animator;
     public GameObject playerModel;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
 
     public Transform bombSpawnLocation;
-    [SerializeField] float bombThrowForce = 350f;
+    [SerializeField] float bombThrowForce = 3f;
 
     [Header("Health settings")]
     public Health healthScript;
@@ -62,17 +63,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Movement () {
-        moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-		moveDirection = moveDirection.normalized * speed;
+        moveDirection = (playerModel.transform.forward.normalized * Input.GetAxis("Vertical"));
 
         //moveDirection.y += Physics.gravity.y * Time.deltaTime;
         moveDirection.y -= 980f * Time.deltaTime;
-        controller.Move( moveDirection * Time.deltaTime );
+        controller.Move(moveDirection * speed * Time.deltaTime);
 
         // Move player in different directions
-		if (Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0) {
-			Quaternion rotatePlayer = Quaternion.LookRotation (new Vector3 (moveDirection.x, 0f, moveDirection.z));
-			playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, 0.3f);
+		if (Input.GetAxis ("Horizontal") != 0) {
+			Quaternion rotatePlayer = Quaternion.LookRotation ((playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
+            rotatePlayer.z = 0;
+			playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, rotationSmoothness/100);
 		}
 
         if (Input.GetKey(KeyCode.F) && canDash==true)
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour {
 
     void Dash()
     {
-        controller.Move(moveDirection * 7f * Time.deltaTime); 
+        controller.Move(moveDirection * 70f * Time.deltaTime); 
         dashEnergy -= (Time.deltaTime * 12);
         dashPS.Play();
 
@@ -127,7 +128,7 @@ public class PlayerController : MonoBehaviour {
             Rigidbody rb = bomb.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.AddForce(bombSpawnLocation.forward * bombThrowForce);
+                rb.AddForce(bombSpawnLocation.forward.normalized * bombThrowForce);
             }
         }
     }
