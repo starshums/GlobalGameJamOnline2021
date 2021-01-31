@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     public float agentSpeed = 3.5f;
     public bool isSkullMinionEnemy = false;
+    public bool isBombmanEnemy = false;
+    Animator bombmanAnimator;
+
     public GameObject player;
 
     public bool isFrozen = false;
@@ -33,6 +36,10 @@ public class EnemyController : MonoBehaviour
         if (isSkullMinionEnemy)
         {
             SkullMinionEnemySettings();
+        }
+        if (isBombmanEnemy)
+        {
+            BombmanEnemySettings();
         }
 
         agent.speed = agentSpeed;
@@ -87,6 +94,11 @@ public class EnemyController : MonoBehaviour
         targetPoint = player.transform;
         isTargetPointSet = true;
     }
+
+    void BombmanEnemySettings()
+    {
+        bombmanAnimator = GetComponent<Animator>();
+    }
     void getPatrolPoints()
     {
         totalNumberOfPatrolPoints = patrolPointsParent.childCount;
@@ -135,6 +147,10 @@ public class EnemyController : MonoBehaviour
     {
         isUnderSpecialCondition = true;
         specialConditionCounter = counter;
+        if (isBombmanEnemy)
+        {
+            bombmanAnimator.SetBool("underSpCond", true);
+        }
     }
 
     void SleepCondition()
@@ -153,6 +169,10 @@ public class EnemyController : MonoBehaviour
 
     void NormalCondition()
     {
+        if (isBombmanEnemy)
+        {
+            bombmanAnimator.SetBool("underSpCond", false);
+        }
 
         agent.speed = agentSpeed;
         //rb.constraints = RigidbodyConstraints.None;

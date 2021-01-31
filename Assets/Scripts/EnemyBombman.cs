@@ -14,7 +14,7 @@ public class EnemyBombman : MonoBehaviour
     [SerializeField] GameObject explosionEffect;
     [SerializeField] GameObject targetDecal;
 
-    public float ReactDistance = 10f;
+    public float ReactDistance = 25f;
     public float JumpForce = 100f;
     public bool canExplode = false;
     public bool targetLocked = true;

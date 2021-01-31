@@ -11,6 +11,7 @@ TagManager:
   - Skullatron6000Hand
   - BombmanEnemy
   - SkullMinionEnemy
+  - Lava
   layers:
   - Default
   - TransparentFX

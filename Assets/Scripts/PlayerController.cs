@@ -150,6 +150,12 @@ public class PlayerController : MonoBehaviour {
             healthScript.ChangeHealth(1);
             Destroy(hit.gameObject);
         }
+
+        if (hit.transform.CompareTag("Lava"))
+        {
+            healthScript.ChangeHealth(-100);
+        }
+
         if (hit.transform.CompareTag("BombmanEnemy"))
         {
             if (isDashing)
