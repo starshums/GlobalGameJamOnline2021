@@ -159,8 +159,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (hit.transform.CompareTag("Battery"))
         {
-            healthScript.ChangeHealth(1);
-            Destroy(hit.gameObject);
+            //healthScript.health += 5;
+            //Destroy(hit.gameObject);
         }
 
         if (hit.transform.CompareTag("Lava"))

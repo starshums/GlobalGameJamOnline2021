@@ -11,6 +11,8 @@ public class Battery : MonoBehaviour
 
     [SerializeField] GameObject player;
 
+    //public Health playerHealthScript;
+
     [Header("Sin Battery Movement")]
     [SerializeField] float speed = 5f;
 
@@ -41,27 +43,28 @@ public class Battery : MonoBehaviour
         //Find the player to spawn on it
          spawnlocation = player.transform.position;
     }
-    void pickUp()
-    {
-        // animation 
-        Instantiate(b_particle, spawnlocation, Quaternion.identity);
+    //void pickUp()
+    //{
+    //    // animation 
+    //    Instantiate(b_particle, spawnlocation, Quaternion.identity);
 
-        // more time? 
+    //    // more time? 
 
-        // gives player health for now in the player control script!
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
+    //    // gives player health 
 
-            pickUp();
-            Destroy(gameObject);
+    //}
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+
+    //        playerHealthScript.ChangeHealth(5);
+    //        Destroy(gameObject);
  
-        }
-      else
-        {
-            Debug.Log("Not a player");
-        }
-    }
+    //    }
+    //  else
+    //    {
+    //        Debug.Log("Not a player");
+    //    }
+    //}
 }

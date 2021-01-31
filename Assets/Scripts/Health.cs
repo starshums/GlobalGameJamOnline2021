@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        health = maxHealth;
+        //health = maxHealth;
     }
 
     private void Start()
@@ -23,9 +23,12 @@ public class Health : MonoBehaviour
         }
     }
 
+
+
     public void ChangeHealth(int changeInHealth)
     {
         health += changeInHealth;
+
         if (health > maxHealth)
         {
             health = maxHealth;
@@ -45,7 +48,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Death()
+
+
+        void Death()
     {
         switch (transform.tag)
         {

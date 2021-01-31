@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class DisplayItem : MonoBehaviour
 {
     public Inventory inventory;
-    public InventorySlot slots;
 
 
     //this will help align the UI

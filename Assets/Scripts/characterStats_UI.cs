@@ -46,7 +46,20 @@ public class characterStats_UI : MonoBehaviour
             HP = healthscript.health;
         }
 
-        currentFill = HP / maxHP;
+
+        currentFill = healthscript.health / healthscript.maxHealth;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+
+        if (hit.transform.CompareTag("Battery"))
+        {
+            {
+                HP += 5;
+            }
+
+        }
     }
 
     void Update()
