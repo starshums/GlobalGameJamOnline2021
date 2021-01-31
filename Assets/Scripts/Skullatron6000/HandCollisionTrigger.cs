@@ -9,7 +9,9 @@ public class HandCollisionTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            other.gameObject.GetComponent<Health>().ChangeHealth(-50);
+            Health playerHp = other.gameObject.GetComponent<Health>(); 
+            if (playerHp) playerHp.ChangeHealth(-50);
+            
             FindObjectOfType<SkullatronHandController>().CollisionDetected(this);
         }
     }

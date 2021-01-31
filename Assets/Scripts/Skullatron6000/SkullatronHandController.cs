@@ -105,9 +105,6 @@ public class SkullatronHandController : MonoBehaviour
     {
         CameraShaker.instance.ShakeCamera(0.7f, 6);
         AttacksCounter++;
-#if UNITY_EDITOR
-        Debug.Log(AttacksCounter);
-#endif
     }
 
     ///<summary>

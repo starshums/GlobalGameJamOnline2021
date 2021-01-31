@@ -7,7 +7,9 @@ public class Health : MonoBehaviour
     public float maxHealth = 10f;
     public float health;
 
-    public GameObject goToDestroyWhenKilled;
+    [Tooltip("Game Object to be destroyed when the health bar goes to zero")]
+    public GameObject GameObjectToDestroy;
+    
     private void Awake()
     {
         health = maxHealth;
@@ -56,7 +58,7 @@ public class Health : MonoBehaviour
                 break;
             case "BombmanEnemy":
                 Debug.Log("Killed " + transform.tag);
-                Destroy(goToDestroyWhenKilled);
+                Destroy(GameObjectToDestroy);
                 break;
             case "SkullMinionEnemy":
                 Debug.Log("Killed " + transform.tag);

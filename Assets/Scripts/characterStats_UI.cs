@@ -22,10 +22,12 @@ public class characterStats_UI : MonoBehaviour
     void Start()
     {
         content = GetComponent<Image>();
-        healthscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        HP = healthscript.health;
-        maxHP = healthscript.maxHealth;
-
+        // healthscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        if (healthscript)
+        {
+            HP = healthscript.health;
+            maxHP = healthscript.maxHealth;
+        }
     }
 
     void healthCheck()
@@ -49,7 +51,7 @@ public class characterStats_UI : MonoBehaviour
 
     void Update()
     {
-       healthCheck();
+        healthCheck();
 
         //HP UI increase and decreasing
         if (currentFill != content.fillAmount)
