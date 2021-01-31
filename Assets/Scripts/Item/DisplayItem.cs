@@ -48,7 +48,7 @@ public class DisplayItem : MonoBehaviour
             else
             {
                 //if we don't have the item yet --> create the item
-                var obj = Instantiate(inventory.Container[i].item.itemPrefab, Vector3.zero, Quaternion.identity, transform);
+                var obj = Instantiate(inventory.Container[i].item.itemImage, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].stackAmount.ToString("n0");
                 displayItems.Add(inventory.Container[i], obj);
@@ -61,7 +61,7 @@ public class DisplayItem : MonoBehaviour
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             //create the inventory inside the UI
-            var obj = Instantiate(inventory.Container[i].item.itemPrefab, Vector3.zero, Quaternion.identity, transform);
+            var obj = Instantiate(inventory.Container[i].item.itemImage, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].stackAmount.ToString("n0");
             displayItems.Add(inventory.Container[i], obj);
