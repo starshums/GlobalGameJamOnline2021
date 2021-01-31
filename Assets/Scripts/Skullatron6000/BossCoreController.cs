@@ -15,13 +15,17 @@ public class BossCoreController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    // private void OnCollisionEnter(Collision other)
+    // {
+
+    // }
+
+    internal void Hit(int damage)
     {
 #if UNITY_EDITOR
         Debug.Log("Core hit");
 #endif
-
-        gameObject.GetComponent<Health>().ChangeHealth(-50);
+        gameObject.GetComponent<Health>().ChangeHealth(-damage);
     }
 
 }
