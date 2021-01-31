@@ -84,19 +84,30 @@ public class EnemyBombman : MonoBehaviour
 
     void DamageAfterExplosion()
     {
+        bool isPlayerHit = false;
         Collider[] nearbyObjectsColliders = Physics.OverlapSphere(transform.position, damageRadius);
         foreach (Collider nearbyObject in nearbyObjectsColliders)
         {
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                
                 //add force
                 rb.AddExplosionForce(explosionForce, transform.position, damageRadius);
                 //damage
                 Health healthScript = nearbyObject.GetComponent<Health>();
                 if (healthScript != null)
                 {
-                    healthScript.ChangeHealth(-2);
+                    if (nearbyObject.CompareTag("Player") && isPlayerHit == false)
+                    {
+                        isPlayerHit = true;
+                        healthScript.ChangeHealth(-2);
+                    }
+                    else
+                    {
+                        healthScript.ChangeHealth(-2);
+
+                    }
                 }
 
                 //TO BREAK THE WOODENBOXES

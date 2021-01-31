@@ -104,7 +104,15 @@ public class EnemyController : MonoBehaviour
 
     void Movement()
     {
-        if (!IsPlayerClose()) agent.SetDestination(targetPoint.position);
+        if (agent.isActiveAndEnabled)
+        {
+            if (!IsPlayerClose()) agent.SetDestination(targetPoint.position);
+            if (isSkullMinionEnemy)
+            {
+                agent.SetDestination(targetPoint.position);
+            }
+        }
+        
     }
 
     void CheckIfReachedTargetPatrolPoint()

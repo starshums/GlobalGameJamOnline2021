@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public float maxHealth = 10f;
     public float health;
 
+    public GameObject goToDestroyWhenKilled;
     private void Awake()
     {
         health = maxHealth;
@@ -51,6 +52,14 @@ public class Health : MonoBehaviour
                 break;
             case "Enemy":
                 Debug.Log("Killed enemy");
+                Destroy(gameObject);
+                break;
+            case "BombmanEnemy":
+                Debug.Log("Killed " + transform.tag);
+                Destroy(goToDestroyWhenKilled);
+                break;
+            case "SkullMinionEnemy":
+                Debug.Log("Killed " + transform.tag);
                 Destroy(gameObject);
                 break;
             default:

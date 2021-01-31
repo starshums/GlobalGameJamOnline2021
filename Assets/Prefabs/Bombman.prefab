@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   health: 0
+  goToDestroyWhenKilled: {fileID: 7738612873368120085}
 --- !u!114 &7738612872411092715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b64f1a3a5dce0444b04ef44b08314f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentSpeed: 3.5
+  isSkullMinionEnemy: 0
+  player: {fileID: 0}
   isFrozen: 0
   isSleeping: 0
   enemySleepingPS: {fileID: 2197902622838230856}
@@ -365,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 74af817fbc47f974a86818528b70df45, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: BombmanEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 74af817fbc47f974a86818528b70df45, type: 3}
       propertyPath: m_LocalRotation.w

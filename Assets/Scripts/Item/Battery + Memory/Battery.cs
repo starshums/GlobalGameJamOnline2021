@@ -28,7 +28,8 @@ public class Battery : MonoBehaviour
     {
         currPosition = transform.position;
         battery_collider = GetComponent<Collider>();
-        
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
  
