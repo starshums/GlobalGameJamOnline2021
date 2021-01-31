@@ -6,6 +6,7 @@ public class SkullatronHandController : MonoBehaviour
 {
     [SerializeField] BoxCollider handTrigger;
     [SerializeField] SkullatronHeadController skulllatronHead;
+    [SerializeField] BossCoreController skullatronCore;
     [SerializeField] CageHandler cage;
 
     public Transform player;
@@ -134,6 +135,7 @@ public class SkullatronHandController : MonoBehaviour
 
         if (cage) cage.CanBeOpen();
         if (skulllatronHead) skulllatronHead.isDead = true;
+        if (skullatronCore) skullatronCore.isDead = true;
         Destroy(this.gameObject);
     }
 }

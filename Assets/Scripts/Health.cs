@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     [Tooltip("Game Object to be destroyed when the health bar goes to zero")]
     public GameObject GameObjectToDestroy;
-    
+
     private void Awake()
     {
         health = maxHealth;
@@ -61,6 +61,10 @@ public class Health : MonoBehaviour
                 Destroy(GameObjectToDestroy);
                 break;
             case "SkullMinionEnemy":
+                Debug.Log("Killed " + transform.tag);
+                Destroy(gameObject);
+                break;
+            case "Core":
                 Debug.Log("Killed " + transform.tag);
                 Destroy(gameObject);
                 break;

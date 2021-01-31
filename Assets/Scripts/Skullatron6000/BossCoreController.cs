@@ -6,11 +6,15 @@ using UnityEngine;
 public class BossCoreController : MonoBehaviour
 {
     [SerializeField] Material heartMaterial;
+    [SerializeField] GameObject[] Portals;
     bool changeColor = false;
     Health bossHP;
-    
-    void Start() {
+    internal bool isDead = false;
+
+    void Start()
+    {
         bossHP = gameObject.GetComponent<Health>();
+        isDead = false;
     }
 
     void Update()
@@ -23,8 +27,17 @@ public class BossCoreController : MonoBehaviour
 
         if (changeColor)
         {
-            heartMaterial.color = Color.LerpUnclamped(heartMaterial.color, Color.red, 1*Time.deltaTime);
+            heartMaterial.color = Color.LerpUnclamped(heartMaterial.color, Color.red, 1 * Time.deltaTime);
             if (heartMaterial.color == Color.red) changeColor = false;
+        }
+
+        if (isDead)
+        {
+            foreach (GameObject obj in Portals)
+            {
+                Destroy(obj);
+            }
+            Destroy(this.gameObject, 1f);
         }
     }
 
@@ -34,7 +47,7 @@ public class BossCoreController : MonoBehaviour
         Debug.Log("Core hit");
 #endif
         if (bossHP) bossHP.ChangeHealth(damage);
-        
+
         heartMaterial.color = Color.yellow;
         changeColor = true;
     }
