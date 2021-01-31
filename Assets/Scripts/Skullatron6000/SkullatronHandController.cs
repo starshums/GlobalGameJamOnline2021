@@ -6,6 +6,8 @@ public class SkullatronHandController : MonoBehaviour
 {
     [SerializeField] BoxCollider handTrigger;
     [SerializeField] SkullatronHeadController skulllatronHead;
+    [SerializeField] CageHandler cage;
+
     public Transform player;
     private Vector3 defaultPosition = new Vector3(19f, 2.5999999f, -26.7499981f);
     public Animator animator;
@@ -129,10 +131,11 @@ public class SkullatronHandController : MonoBehaviour
                 piece.GetComponent<MeshCollider>().enabled = true;
                 piece.transform.parent = null;
                 piece.AddComponent<Rigidbody>();
-                piece.GetComponent<Rigidbody>().mass = 500.0f;
+                piece.GetComponent<Rigidbody>().mass = 15000.0f;
             }
         }
 
+        if (cage) cage.CanBeOpen();
         if (skulllatronHead) skulllatronHead.isDead = true;
         Destroy(this.gameObject);
     }
