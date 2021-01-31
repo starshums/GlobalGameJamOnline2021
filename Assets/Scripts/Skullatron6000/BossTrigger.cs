@@ -6,6 +6,7 @@ using UnityEngine;
 public class BossTrigger : MonoBehaviour
 {
     [SerializeField] AudioClip begin;
+    [SerializeField] AudioClip fight;
     [SerializeField] AudioClip letsFight;
 
     void Start() => GetComponent<AudioSource>().PlayOneShot(begin);
@@ -18,8 +19,17 @@ public class BossTrigger : MonoBehaviour
         Debug.Log("Boss Fight Starts");
 #endif  
         GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().volume =0.4f;
         GetComponent<AudioSource>().PlayOneShot(letsFight);
         GetComponent<AudioSource>().loop = true;
         GameObject.FindObjectOfType<SkullatronHandController>().isBossFightStarted = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<AudioSource>().volume = 0.2f;
+        GetComponent<AudioSource>().PlayOneShot(fight);
+        GetComponent<AudioSource>().loop = true;
+        GetComponent<BoxCollider>().enabled = false;
     }
 }

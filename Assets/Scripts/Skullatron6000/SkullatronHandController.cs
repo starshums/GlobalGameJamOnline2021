@@ -8,6 +8,8 @@ public class SkullatronHandController : MonoBehaviour
     [SerializeField] SkullatronHeadController skulllatronHead;
     [SerializeField] BossCoreController skullatronCore;
     [SerializeField] CageHandler cage;
+    [Space]
+    [SerializeField] AudioClip handSlam;
 
     public Transform player;
     private Vector3 defaultPosition = new Vector3(19f, 2.5999999f, -26.7499981f);
@@ -105,6 +107,7 @@ public class SkullatronHandController : MonoBehaviour
     public void Shake()
     {
         CameraShaker.instance.ShakeCamera(0.7f, 6);
+        if (handSlam) GetComponent<AudioSource>().PlayOneShot(handSlam);
         AttacksCounter++;
     }
 
