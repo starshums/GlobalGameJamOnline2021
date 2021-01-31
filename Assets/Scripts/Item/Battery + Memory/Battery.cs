@@ -23,6 +23,8 @@ public class Battery : MonoBehaviour
 
     [SerializeField]GameObject b_particle;
 
+    public Health playerhp;
+
 
     void Start()
     {
@@ -44,7 +46,7 @@ public class Battery : MonoBehaviour
     void pickUp()
     {
         // animation 
-        Instantiate(b_particle, spawnlocation, Quaternion.identity);
+        //Instantiate(b_particle, spawnlocation, Quaternion.identity);
 
         // more time? 
 
@@ -55,7 +57,8 @@ public class Battery : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-            pickUp();
+            playerhp.health += 5f;
+
             Destroy(gameObject);
  
         }

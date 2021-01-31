@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MemoryShard
   m_EditorClassIdentifier: 
   itemName: shards
-  itemImage: {fileID: 919132149155446097, guid: ad8616252b4c2fa47b08dd9adab4498c, type: 3}
+  itemImage: {fileID: 1567879114774450000, guid: 25bd6560fd237b544bf5b17788138e2a, type: 3}
   description: 
   MyMemoryType: 0

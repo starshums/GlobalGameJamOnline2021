@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (hit.transform.CompareTag("Battery"))
         {
-            healthScript.ChangeHealth(1);
+            healthScript.ChangeHealth(5);
             Destroy(hit.gameObject);
         }
 
