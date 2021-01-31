@@ -89,6 +89,12 @@ public class Bomb : MonoBehaviour
                         WoodenBoxHandler box = nearbyObject.GetComponent<WoodenBoxHandler>();
                         if (box) box.Break();
                     }
+
+                    if (nearbyObjectTag=="Core")
+                    {
+                        BossCoreController core = nearbyObject.GetComponent<BossCoreController>();
+                        if (core) core.Hit(-50);
+                    }
                 }
                 else if (isFreezeBomb)
                 {

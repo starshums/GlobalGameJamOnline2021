@@ -93,8 +93,7 @@ MonoBehaviour:
   - {fileID: 2339296589960826065}
   - {fileID: 8536375774163123525}
   collectables:
-  - {fileID: 6783092144359847869, guid: d76b73e5097a37a4ea91c10495b756da, type: 3}
-  - {fileID: 8206190902750386581, guid: 60b3dfc91805911419552d5ea65beaa4, type: 3}
+  - {fileID: 53111320475385045, guid: 5b12a0174c3faa543acab5e29707fe84, type: 3}
 --- !u!1 &334765862855552869
 GameObject:
   m_ObjectHideFlags: 0
