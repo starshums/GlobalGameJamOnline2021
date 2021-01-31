@@ -5,14 +5,14 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public float maxHealth = 10f;
-    public float health;
+    public float health = 10f;
 
     [Tooltip("Game Object to be destroyed when the health bar goes to zero")]
     public GameObject GameObjectToDestroy;
 
     private void Awake()
     {
-        health = maxHealth;
+        //health = maxHealth;
     }
 
     private void Start()
