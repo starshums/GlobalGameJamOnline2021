@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [Tooltip("Game Object to be destroyed when the health bar goes to zero")]
     public GameObject GameObjectToDestroy;
 
+    GameObject gameOverScreen;
     private void Awake()
     {
         health = maxHealth;
@@ -21,6 +22,8 @@ public class Health : MonoBehaviour
         {
             health = maxHealth;
         }
+        gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
+        
     }
 
     public void ChangeHealth(int changeInHealth)
@@ -51,6 +54,7 @@ public class Health : MonoBehaviour
         {
             case "Player":
                 Debug.Log("Game Over");
+                GameOver();
                 break;
             case "Enemy":
                 Debug.Log("Killed enemy");
@@ -72,5 +76,10 @@ public class Health : MonoBehaviour
                 Debug.Log(transform.name + " has no tag attached");
                 break;
         }
+    }
+
+    void GameOver()
+    {
+        gameOverScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 }
