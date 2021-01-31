@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 
     void Movement () {
         
-        moveDirection = (playerModel.transform.forward.normalized * Input.GetAxis("Vertical"));
+        moveDirection = (transform.forward.normalized * Input.GetAxis("Vertical"));
 
         // moveDirection = (transform.forward.normalized * Input.GetAxis("Vertical") + (playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
         // moveDirection = moveDirection.normalized * speed;
@@ -81,12 +81,9 @@ public class PlayerController : MonoBehaviour {
 		// 	playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, 0.3f);
 		// }
 
-        // Move player in different directions
-		if (Input.GetAxis ("Horizontal") != 0) {
-            Quaternion rotatePlayer = Quaternion.LookRotation ((playerModel.transform.right.normalized * Input.GetAxis("Horizontal")));
-            rotatePlayer.z = 0;
-			playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, rotatePlayer, rotationSmoothness/100);
-		}
+        // Rotation of Player
+        transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, Vector3.zero) * transform.rotation, rotationSmoothness * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.F) && canDash==true)
         {
