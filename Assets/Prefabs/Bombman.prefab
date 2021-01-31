@@ -409,6 +409,7 @@ MonoBehaviour:
   damageRadius: 7
   explosionForce: 500
   jumpSound: {fileID: 8300000, guid: 3f3e86358aaa803469ca8fd254261d6a, type: 3}
+  explosionSound: {fileID: 8300000, guid: 4fed82d29fdfb694997fa6e402d76db5, type: 3}
 --- !u!114 &7738612872411092714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +425,7 @@ MonoBehaviour:
   maxHealth: 4
   health: 0
   GameObjectToDestroy: {fileID: 0}
+  itemsToDrop: []
 --- !u!114 &7738612872411092715
 MonoBehaviour:
   m_ObjectHideFlags: 0

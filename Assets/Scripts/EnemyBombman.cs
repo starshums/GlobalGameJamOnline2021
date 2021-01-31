@@ -25,6 +25,8 @@ public class EnemyBombman : MonoBehaviour
     public float explosionForce = 500f;
 
     [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip explosionSound;
+
     bool playOnce = true;
 
     void Start()
@@ -80,6 +82,8 @@ public class EnemyBombman : MonoBehaviour
             DamageAfterExplosion();
 
             CameraShaker.instance.ShakeCamera(1, 3);
+            AudioSource audioS = GetComponent<AudioSource>();
+            if (audioS) audioS.PlayOneShot(explosionSound);
             Destroy(this.gameObject);
         }
     }
