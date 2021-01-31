@@ -15,7 +15,7 @@ public class EnemyBombman : MonoBehaviour
     [SerializeField] GameObject targetDecal;
 
     public float ReactDistance = 25f;
-    public float JumpForce = 100f;
+    public float JumpForce = 10f;
     public bool canExplode = false;
     public bool targetLocked = true;
 
@@ -40,7 +40,7 @@ public class EnemyBombman : MonoBehaviour
         if (Vector3.Magnitude(player.gameObject.transform.position - transform.position) < ReactDistance && !canExplode)
         {
             animController.SetBool("Attack", true);
-            rb.AddForce(Vector3.up.normalized * JumpForce, ForceMode.Force);
+            rb.AddForce(Vector3.up.normalized * JumpForce, ForceMode.VelocityChange);
             GetComponent<NavMeshAgent>().enabled = false;
             StartCoroutine(BombDive());
         }
@@ -56,7 +56,7 @@ public class EnemyBombman : MonoBehaviour
         Vector3 direction = player.gameObject.transform.position - transform.position;
         LockTarget(player.gameObject.transform.position);
         yield return new WaitForSeconds(0.5f);
-        rb.AddForce(direction.normalized * 150f, ForceMode.Impulse);
+        rb.AddForce(direction.normalized * 250f, ForceMode.Impulse);
         canExplode = true;
     }
 
