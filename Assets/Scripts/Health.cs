@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     public GameObject GameObjectToDestroy;
 
     GameObject gameOverScreen;
+
+    public GameObject[] itemsToDrop;
     private void Awake()
     {
         health = maxHealth;
@@ -66,6 +68,7 @@ public class Health : MonoBehaviour
                 break;
             case "SkullMinionEnemy":
                 Debug.Log("Killed " + transform.tag);
+                dropItem();
                 Destroy(gameObject);
                 break;
             case "Core":
@@ -77,7 +80,19 @@ public class Health : MonoBehaviour
                 break;
         }
     }
-
+    void dropItem()
+    {
+        int rand = Random.Range(0, itemsToDrop.Length);
+        if (itemsToDrop.Length > 0)
+        {
+            GameObject drop = Instantiate(itemsToDrop[rand], transform.position, Quaternion.identity);
+            Bomb bombScript = drop.GetComponent<Bomb>();
+            if (bombScript != null)
+            {
+                bombScript.isBombActive = false;
+            }
+        }
+    }
     void GameOver()
     {
         gameOverScreen.transform.GetChild(0).gameObject.SetActive(true);
