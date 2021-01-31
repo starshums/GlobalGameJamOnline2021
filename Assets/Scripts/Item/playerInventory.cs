@@ -29,7 +29,7 @@ public class playerInventory : MonoBehaviour
         //checks the inventory for a Memory shard
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            if (SceneManager.GetActiveScene().name == "Scene1" && inventory.Container[i].item.itemName == "shards" && inventory.Container[i].stackAmount == 1)
+            if (SceneManager.GetActiveScene().name == "Scene1" && inventory.Container[i].item.itemName == "shards" && inventory.Container[i].stackAmount >= 1)
             {
                 //player uses the memory to remember --> so remove 1 stack
                 inventory.Container[i].removeStack(1);
@@ -45,7 +45,7 @@ public class playerInventory : MonoBehaviour
         //checks the inventory for a Memory shard
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            if (SceneManager.GetActiveScene().name == "Scene2" && inventory.Container[i].item.itemName == "shards" && inventory.Container[i].stackAmount == 2)
+            if (SceneManager.GetActiveScene().name == "Scene2" && inventory.Container[i].item.itemName == "shards" && inventory.Container[i].stackAmount >= 2)
             {
                 //player uses the memory to remember --> so remove 2 stack
                 inventory.Container[i].removeStack(2);

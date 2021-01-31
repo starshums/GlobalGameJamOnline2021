@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
         {
             case "Player":
                 Debug.Log("Game Over");
-                GameOver();
+                Invoke("GameOver", 0.5f);
                 break;
             case "Enemy":
                 Debug.Log("Killed enemy");
@@ -96,5 +96,6 @@ public class Health : MonoBehaviour
     void GameOver()
     {
         gameOverScreen.transform.GetChild(0).gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 }
