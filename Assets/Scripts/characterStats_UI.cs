@@ -7,7 +7,7 @@ public class characterStats_UI : MonoBehaviour
 {
     public Image content;
 
-    public Health playerHealthScript;
+    public Health healthscript;
 
     [SerializeField]
     public float lerpSpeed;
@@ -48,7 +48,7 @@ public class characterStats_UI : MonoBehaviour
     {
        healthCheck();
 
-        currentFill = playerHealthScript.health / playerHealthScript.maxHealth;
+        currentFill = healthscript.health / healthscript.maxHealth;
 
         //HP UI increase and decreasing
         if (currentFill != content.fillAmount)
