@@ -16,6 +16,7 @@ TagManager:
   - sleepBomb
   - Undefined
   - boomBomb
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX
