@@ -57,13 +57,13 @@ public class playerInventory : MonoBehaviour
             inventory.AddItem(item.itemObj, 1);
             Destroy(collision.gameObject);
        }
-        if (item.itemObj.itemName == "shards")
-        {
-            Debug.Log("picked up a memory shard!");
-        }
-        else if (item.itemObj.itemName == "Battery")
-        {
-            Debug.Log("picked up a have a battery!");
-        }
+        //if (item.itemObj.itemName == "shards")
+        //{
+        //    Debug.Log("picked up a memory shard!");
+        //}
+        //else if (item.itemObj.itemName == "Battery")
+        //{
+        //    Debug.Log("picked up a have a battery!");
+        //}
      }
 }
