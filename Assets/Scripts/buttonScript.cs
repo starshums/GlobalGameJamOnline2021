@@ -14,4 +14,13 @@ public class buttonScript : MonoBehaviour
     {
         SceneManager.LoadScene("Scene1");
     }
+    public void onCredits()
+    {
+        SceneManager.LoadScene("Scene0 1");
+    }
+
+    public void onReturn()
+    {
+        SceneManager.LoadScene("Scene0");
+    }
 }
