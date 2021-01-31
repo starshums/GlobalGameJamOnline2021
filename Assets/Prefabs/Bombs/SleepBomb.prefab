@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 559234758076961539}
   - component: {fileID: 1335946858}
   - component: {fileID: 1335946863}
+  - component: {fileID: -5537922896836603623}
   m_Layer: 0
-  m_Name: FireBomb
+  m_Name: SleepBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 009517a83d7f06b4281ff728d97219f5, type: 2}
+  - {fileID: 2100000, guid: 648b0146b62b8514181753fa67f6de0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,17 +126,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6769175fbb608504cbcb3933d4e26238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFireBomb: 1
+  isFireBomb: 0
   isFreezeBomb: 0
-  isSleepBomb: 0
+  isSleepBomb: 1
   freezeTimer: 8
   sleepTimer: 10
-  boomPS: {fileID: 3135610035040984050, guid: 71980cf9d6edfd344a7f61b335e44838, type: 3}
+  boomPS: {fileID: 0}
   frostyPS: {fileID: 0}
-  sleepPS: {fileID: 0}
+  sleepPS: {fileID: 3135610035040984050, guid: 7c96223e981c45049a8e6bc9803fb8d8, type: 3}
   radius: 8
   explosionForce: 500
   delay: 3
   countdown: 0
   CameraShakeIntensity: 2
   CameraShakeTimer: 1
+--- !u!114 &-5537922896836603623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6182160531386536975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee635cf8dce01f345a8f6c80a1c79308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemObj: {fileID: 11400000, guid: f22f7aab262fdb943b60bd0f7ab2f603, type: 2}

@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour {
     [Header("Health settings")]
     public Health healthScript;
 
+    [Header("Player Inventory")]
+    public playerInventory inventoryscript;
+
     // Start is called before the first frame update
     void Start () 
     {
@@ -113,17 +116,21 @@ public class PlayerController : MonoBehaviour {
 
         GameObject bombToThrow = null;
 
-        if (Input.GetButtonDown("FireBomb"))
+        if (Input.GetButtonDown("FireBomb") && (!inventoryscript.hasBomb))
         {
             bombToThrow = fireBombPrefab;
+            inventoryscript.useFireBomb();
+           
         }
-        if (Input.GetButtonDown("FreezeBomb"))
+        if (Input.GetButtonDown("FreezeBomb") && (!inventoryscript.hasBomb))
         {
             bombToThrow = freezeBombPrefab;
+            inventoryscript.useFreezeBomb();
         }
-        if (Input.GetButtonDown("SleepBomb"))
+        if (Input.GetButtonDown("SleepBomb") && (!inventoryscript.hasBomb))
         {
             bombToThrow = sleepBombPrefab;
+            inventoryscript.useSleepBomb();
         }
 
         if (bombToThrow != null)

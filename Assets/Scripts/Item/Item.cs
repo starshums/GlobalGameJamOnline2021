@@ -6,9 +6,9 @@ using UnityEngine;
 public abstract class Item : ScriptableObject
 {
     public string itemName;
-    public GameObject itemPrefab;
+    public GameObject itemImage;
 
-    [TextArea(10, 10)]
+    [TextArea(5, 5)]
     public string description;
 }
 

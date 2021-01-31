@@ -583,6 +583,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3468950383588518098, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468950383588518098, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: rotationSmoothness
       value: 1
       objectReference: {fileID: 0}
