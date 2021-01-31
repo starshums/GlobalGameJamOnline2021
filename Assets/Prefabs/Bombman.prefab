@@ -124,6 +124,8 @@ MonoBehaviour:
   isFrozen: 0
   isSleeping: 0
   enemySleepingPS: {fileID: 2197902622838230856}
+  iceSkullMinion: {fileID: 0}
+  iceBombman: {fileID: 729774703966030455}
   patrolPointsParent: {fileID: 7738612873901314392}
   patrolPoints: []
   targetPoint: {fileID: 0}
@@ -313,6 +315,68 @@ Transform:
   m_Father: {fileID: 7738612873368120086}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6334798156813525336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7849679684091422736}
+    m_Modifications:
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233764508220600725, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757958444031765295, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+      propertyPath: m_Name
+      value: ice2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+--- !u!1 &729774703966030455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6757958444031765295, guid: 470f226813b0a544394463ca0254fc7b, type: 3}
+  m_PrefabInstance: {fileID: 6334798156813525336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7738612872848330747
 PrefabInstance:
   m_ObjectHideFlags: 0

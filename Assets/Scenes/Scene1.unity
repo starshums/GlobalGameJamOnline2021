@@ -5404,6 +5404,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 501045079213563866, guid: f00cd7ff7d414ec44a1393f29483624e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738612872411092713, guid: f00cd7ff7d414ec44a1393f29483624e, type: 3}
+      propertyPath: ReactDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7738612873368120085, guid: f00cd7ff7d414ec44a1393f29483624e, type: 3}
       propertyPath: m_Name
       value: Bombman

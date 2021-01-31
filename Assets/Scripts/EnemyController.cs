@@ -19,6 +19,9 @@ public class EnemyController : MonoBehaviour
     bool isUnderSpecialCondition = false;
     float specialConditionCounter = 3f;
     public ParticleSystem enemySleepingPS;
+    public GameObject iceSkullMinion;
+    public GameObject iceBombman;
+    GameObject iceForFrozenCondition;
 
     public Transform patrolPointsParent;
     public Transform[] patrolPoints;
@@ -93,11 +96,13 @@ public class EnemyController : MonoBehaviour
         agentSpeed = 3f;
         targetPoint = player.transform;
         isTargetPointSet = true;
+        iceForFrozenCondition = iceSkullMinion;
     }
 
     void BombmanEnemySettings()
     {
         bombmanAnimator = GetComponent<Animator>();
+        iceForFrozenCondition = iceBombman;
     }
     void getPatrolPoints()
     {
@@ -163,6 +168,7 @@ public class EnemyController : MonoBehaviour
     void FrozenCondition()
     {
         agent.speed = 0;
+        iceForFrozenCondition.SetActive(true);
         //rb.constraints = RigidbodyConstraints.FreezePosition;
         //rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
@@ -174,6 +180,7 @@ public class EnemyController : MonoBehaviour
             bombmanAnimator.SetBool("underSpCond", false);
         }
 
+        iceForFrozenCondition.SetActive(false);
         agent.speed = agentSpeed;
         //rb.constraints = RigidbodyConstraints.None;
         isSleeping = false;
