@@ -128,10 +128,12 @@ MonoBehaviour:
   isFireBomb: 0
   isFreezeBomb: 0
   isSleepBomb: 1
+  freezeTimer: 8
+  sleepTimer: 10
   boomPS: {fileID: 0}
   frostyPS: {fileID: 0}
   sleepPS: {fileID: 3135610035040984050, guid: 7c96223e981c45049a8e6bc9803fb8d8, type: 3}
-  radius: 5
+  radius: 8
   explosionForce: 500
   delay: 3
   countdown: 0

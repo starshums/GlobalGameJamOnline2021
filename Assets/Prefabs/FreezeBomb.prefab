@@ -128,10 +128,14 @@ MonoBehaviour:
   isFireBomb: 0
   isFreezeBomb: 1
   isSleepBomb: 0
+  freezeTimer: 8
+  sleepTimer: 10
   boomPS: {fileID: 0}
   frostyPS: {fileID: 3135610035040984050, guid: 404d0f1ee687a474a8fab60fe22f24c5, type: 3}
   sleepPS: {fileID: 0}
-  radius: 5
+  radius: 8
   explosionForce: 500
   delay: 3
   countdown: 0
+  CameraShakeIntensity: 2
+  CameraShakeTimer: 1
