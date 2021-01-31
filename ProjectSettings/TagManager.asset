@@ -12,6 +12,10 @@ TagManager:
   - BombmanEnemy
   - SkullMinionEnemy
   - Lava
+  - freezeBomb
+  - sleepBomb
+  - Undefined
+  - boomBomb
   layers:
   - Default
   - TransparentFX

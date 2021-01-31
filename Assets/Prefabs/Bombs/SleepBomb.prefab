@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5537922896836603623}
   m_Layer: 0
   m_Name: SleepBomb
-  m_TagString: Untagged
+  m_TagString: sleepBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

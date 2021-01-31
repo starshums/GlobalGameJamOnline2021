@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour {
     [Header("Player Inventory")]
     public playerInventory inventoryscript;
 
+
+    public int sleepBombCount;
+    public int boomBombCount;
+    public int freezeBombCount;
+
     // Start is called before the first frame update
     void Start () 
     {
@@ -117,19 +122,22 @@ public class PlayerController : MonoBehaviour {
 
         GameObject bombToThrow = null;
 
-        if (Input.GetButtonDown("FireBomb") && (inventoryscript.hasBomb))
+        if (Input.GetButtonDown("FireBomb") && (inventoryscript.hasBomb) && boomBombCount>0)
         {
+            boomBombCount -= 1;
             bombToThrow = fireBombPrefab;
             inventoryscript.useFireBomb();
            
         }
-        if (Input.GetButtonDown("FreezeBomb") && (inventoryscript.hasBomb))
+        if (Input.GetButtonDown("FreezeBomb") && (inventoryscript.hasBomb) && freezeBombCount>0)
         {
+            freezeBombCount -= 1;
             bombToThrow = freezeBombPrefab;
             inventoryscript.useFreezeBomb();
         }
-        if (Input.GetButtonDown("SleepBomb") && (inventoryscript.hasBomb))
+        if (Input.GetButtonDown("SleepBomb") && (inventoryscript.hasBomb) && sleepBombCount>0)
         {
+            sleepBombCount -= 1;
             bombToThrow = sleepBombPrefab;
             inventoryscript.useSleepBomb();
         }
@@ -161,6 +169,37 @@ public class PlayerController : MonoBehaviour {
         {
             healthScript.ChangeHealth(1);
             Destroy(hit.gameObject);
+        }
+
+        if (hit.transform.CompareTag("sleepBomb"))
+        {
+            Bomb bombScript = hit.gameObject.GetComponent<Bomb>();
+            if (!bombScript.isBombActive)
+            {
+                sleepBombCount += 1;
+                Destroy(hit.gameObject);
+            }
+            
+        }
+        if (hit.transform.CompareTag("boomBomb"))
+        {
+            Bomb bombScript = hit.gameObject.GetComponent<Bomb>();
+            if (!bombScript.isBombActive)
+            {
+                boomBombCount += 1;
+                Destroy(hit.gameObject);
+            }
+
+        }
+        if (hit.transform.CompareTag("freezeBomb"))
+        {
+            Bomb bombScript = hit.gameObject.GetComponent<Bomb>();
+            if (!bombScript.isBombActive)
+            {
+                freezeBombCount += 1;
+                Destroy(hit.gameObject);
+            }
+
         }
 
         if (hit.transform.CompareTag("Lava"))
