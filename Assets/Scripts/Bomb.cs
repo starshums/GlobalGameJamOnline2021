@@ -18,8 +18,10 @@ public class Bomb : MonoBehaviour
     GameObject explosionEffect;
 
 
+
     public float radius = 8f;
     public float explosionForce = 500f;
+    public bool isBombActive = true;
 
     public float delay = 3f;
     public float countdown;
@@ -52,7 +54,7 @@ public class Bomb : MonoBehaviour
     void Update()
     {
         countdown -= Time.deltaTime;
-        if (countdown <= 0f && !hasExploded)
+        if (countdown <= 0f && !hasExploded && isBombActive == true)
         {
             Explode();
             hasExploded = true;
