@@ -23,6 +23,9 @@ public class characterStats_UI : MonoBehaviour
     {
         content = GetComponent<Image>();
 
+        healthscript.health = HP;
+        healthscript.maxHealth = maxHP;
+
     }
 
     void healthCheck()
@@ -40,15 +43,16 @@ public class characterStats_UI : MonoBehaviour
         {
             HP = HP;
         }
+
+        currentFill = HP / maxHP;
     }
 
 
-    // Update is called once per frame
+
     void Update()
     {
        healthCheck();
 
-        currentFill = healthscript.health / healthscript.maxHealth;
 
         //HP UI increase and decreasing
         if (currentFill != content.fillAmount)
