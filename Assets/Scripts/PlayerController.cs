@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(playerInventory))]
 public class PlayerController : MonoBehaviour {
     [Header ("Player Movement Settings")]
     private Vector3 moveDirection;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour {
         maxSpeed = speed;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator> ();
-
+        inventoryscript = GetComponent<playerInventory>();
         dashEnergy = maxDashEnergy;
     }
 
