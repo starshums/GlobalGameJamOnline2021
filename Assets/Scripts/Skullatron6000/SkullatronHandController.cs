@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SkullatronHandController : MonoBehaviour
 {
+    [SerializeField] BoxCollider handTrigger;
+    [SerializeField] SkullatronHeadController skulllatronHead;
     public Transform player;
     private Vector3 defaultPosition = new Vector3(19f, 2.5999999f, -26.7499981f);
     public Animator animator;
@@ -14,29 +16,39 @@ public class SkullatronHandController : MonoBehaviour
     public int MaxAttacks = 5;
     public bool isBossDead = false;
 
-    void Start() {
+    [SerializeField] GameObject[] deadPieces;
+
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         AttacksCounter = 0;
     }
 
-    void Update() {
+    void Update()
+    {
         // InvokeRepeating("AttackSlamPlayer", 8f, 8f);
-        if (isBossFightStarted) {
-            if(!isBossDead) {
-                if (AttacksCounter < MaxAttacks) {
+        if (isBossFightStarted)
+        {
+            if (!isBossDead)
+            {
+                if (AttacksCounter < MaxAttacks)
+                {
                     AttackSlamPlayer();
                 }
                 else
                 {
                     StartCoroutine("GoBackHandPlease");
                 }
-            } else {
-                StartCoroutine("GoBackHandPlease");
-                Debug.Log("Boss is dead.");
-                // Teleport far away or (Death animation)
             }
-            
+            else
+            {
+                StartCoroutine("GoBackHandPlease");
+#if UNITY_EDITOR
+                Debug.Log("Boss is dead.");
+#endif
+            }
+
         }
     }
 
@@ -66,11 +78,13 @@ public class SkullatronHandController : MonoBehaviour
         obj.position = endPosition;
     }
 
-    public void CollisionDetected(HandCollisionTrigger handCollisionTrigger) {
+    public void CollisionDetected(HandCollisionTrigger handCollisionTrigger)
+    {
         StartCoroutine("GoBackHandPlease");
     }
 
-    private IEnumerator GoBackHandPlease() {
+    private IEnumerator GoBackHandPlease()
+    {
         StopCoroutine("MoveTheHand");
         AttacksCounter = 0;
         isAttacked = true;
@@ -78,12 +92,48 @@ public class SkullatronHandController : MonoBehaviour
         StartCoroutine(MoveTheHand(transform, transform.position, defaultPosition));
         yield return new WaitForSeconds(10f);
         isAttacked = false;
+
+        if (isBossDead) Death();
     }
 
+    ///<summary>
+    /// EVENT TO BE CALLED FROM THE ATTACK ANIMATION
+    ///</summary>
     public void Shake()
     {
         CameraShaker.instance.ShakeCamera(0.7f, 6);
         AttacksCounter++;
+#if UNITY_EDITOR
         Debug.Log(AttacksCounter);
+#endif
+    }
+
+    ///<summary>
+    /// EVENT TO BE CALLED FROM THE ATTACK ANIMATION
+    /// This event activates/deactivates the trigger to avoid the player to get hit if not hit =D
+    ///</summary>
+    public void TriggerActive(int status)
+    {
+        if (handTrigger) handTrigger.enabled = status == 1 ? true : false;
+    }
+
+    ///<summary>
+    /// Will be called when the Skullatron is dead and make it into piece ,then destroy the main GO
+    ///</summary>
+    private void Death()
+    {
+        if (deadPieces.Length > 0)
+        {
+            foreach (GameObject piece in deadPieces)
+            {
+                piece.GetComponent<MeshCollider>().enabled = true;
+                piece.transform.parent = null;
+                piece.AddComponent<Rigidbody>();
+                piece.GetComponent<Rigidbody>().mass = 500.0f;
+            }
+        }
+
+        if (skulllatronHead) skulllatronHead.isDead = true;
+        Destroy(this.gameObject);
     }
 }

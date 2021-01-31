@@ -11,6 +11,7 @@ public class BossCoreController : MonoBehaviour
         if (gameObject.GetComponent<Health>().health == 0)
         {
             GameObject.FindObjectOfType<SkullatronHandController>().isBossDead = true;
+            Destroy(this.gameObject, 1f);
         }
     }
 

@@ -56,12 +56,6 @@ public class PlayerController : MonoBehaviour {
         ThrowBomb ();
     }
 
-    void Jump () {
-        if (Input.GetButtonDown ("Jump")) {
-
-        }
-    }
-
     void Movement () {
         
         moveDirection = (transform.forward.normalized * Input.GetAxis("Vertical"));
