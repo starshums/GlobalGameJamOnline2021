@@ -3594,6 +3594,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &510723866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7361366033593522906, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+  m_PrefabInstance: {fileID: 1508889991}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d5196089ed28541b8cfc31d1966847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &511035989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5191,7 +5202,7 @@ PrefabInstance:
     - target: {fileID: 562269530700876257, guid: fa8cf1ef789daba4ab2d45184e3fed6c, type: 3}
       propertyPath: healthscript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 510723866}
     - target: {fileID: 4792593426414247314, guid: fa8cf1ef789daba4ab2d45184e3fed6c, type: 3}
       propertyPath: m_Name
       value: PlayerHP-Inventory
@@ -13530,7 +13541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 33.144, y: -17.9}
+  m_AnchoredPosition: {x: 33.144, y: -17.900024}
   m_SizeDelta: {x: 618.8499, y: 51.3213}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4994249529514183393
