@@ -116,21 +116,25 @@ public class PlayerController : MonoBehaviour {
 
         GameObject bombToThrow = null;
 
-        if (Input.GetButtonDown("FireBomb") && (!inventoryscript.hasBomb))
+        if (Input.GetButtonDown("FireBomb") && (inventoryscript.hasBomb))
         {
             bombToThrow = fireBombPrefab;
             inventoryscript.useFireBomb();
            
         }
-        if (Input.GetButtonDown("FreezeBomb") && (!inventoryscript.hasBomb))
+        if (Input.GetButtonDown("FreezeBomb") && (inventoryscript.hasBomb))
         {
             bombToThrow = freezeBombPrefab;
             inventoryscript.useFreezeBomb();
         }
-        if (Input.GetButtonDown("SleepBomb") && (!inventoryscript.hasBomb))
+        if (Input.GetButtonDown("SleepBomb") && (inventoryscript.hasBomb))
         {
             bombToThrow = sleepBombPrefab;
             inventoryscript.useSleepBomb();
+        }
+        else
+        {
+            Debug.Log("You dont have any bombs!");
         }
 
         if (bombToThrow != null)
