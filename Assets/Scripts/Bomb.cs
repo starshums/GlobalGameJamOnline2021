@@ -78,7 +78,7 @@ public class Bomb : MonoBehaviour
                     rb.AddExplosionForce(explosionForce, transform.position, radius);
                     //damage
                     Health healthScript = nearbyObject.GetComponent<Health>();
-                    if (healthScript != null)
+                    if (healthScript != null && nearbyObjectTag != "Player")
                     {
                         healthScript.ChangeHealth(-2);
                     }
@@ -114,8 +114,6 @@ public class Bomb : MonoBehaviour
                         enemyController.isSleeping = true;
                     }
                 }
-
-                
             }
         }
 
