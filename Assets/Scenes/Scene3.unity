@@ -1676,6 +1676,7 @@ MonoBehaviour:
   skulllatronHead: {fileID: 12287986}
   skullatronCore: {fileID: 0}
   cage: {fileID: 104463747}
+  handSlam: {fileID: 8300000, guid: 076eb9bbb0f13834a9785769ea9679e1, type: 3}
   player: {fileID: 0}
   animator: {fileID: 0}
   isBossFightStarted: 0
@@ -6095,10 +6096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartMaterial: {fileID: 2100000, guid: 74d348d1b749f8047b4c3d41ab04cd0c, type: 2}
   Portals:
-  - {fileID: 0}
   - {fileID: 1612460440}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1032904732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,7 +6110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1000
-  health: 0
+  health: 1000
   GameObjectToDestroy: {fileID: 919132148980374855}
 --- !u!1001 &1033357156
 PrefabInstance:
@@ -7978,8 +7976,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 0, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 11.07398, y: 0, z: 6.1075096}
+  m_Center: {x: -0.08071995, y: 0, z: -1.0083523}
 --- !u!4 &1431559682
 Transform:
   m_ObjectHideFlags: 0
@@ -8007,7 +8005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   begin: {fileID: 8300000, guid: b7f4836944491ab49a56a820214d6125, type: 3}
-  letsFight: {fileID: 8300000, guid: 0afdada10ad619d4e8ddf7b6ec2b6c32, type: 3}
+  fight: {fileID: 8300000, guid: 0afdada10ad619d4e8ddf7b6ec2b6c32, type: 3}
+  letsFight: {fileID: 8300000, guid: ab62bed48e83a734f8d5ecccbbf8a6fb, type: 3}
 --- !u!82 &1431559684
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8022,7 +8021,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8465,6 +8464,14 @@ PrefabInstance:
     - target: {fileID: 6789425204030521257, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.0000000013780784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361366033593522906, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361366033593522906, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
+      propertyPath: maxHealth
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
@@ -12961,6 +12968,7 @@ GameObject:
   - component: {fileID: 543450652483152864}
   - component: {fileID: 258696456}
   - component: {fileID: 258696457}
+  - component: {fileID: 919132148223848795}
   m_Layer: 0
   m_Name: skullatron_hand
   m_TagString: Skullatron6000Hand
@@ -12968,6 +12976,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &919132148223848795
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148223848794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -2589527708017676108, guid: 7d814f893bb663d4db09dc25f55c9338, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.255
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &919132148821495218
 GameObject:
   m_ObjectHideFlags: 0
@@ -13697,9 +13801,9 @@ MonoBehaviour:
   content: {fileID: 4994249530384083562}
   healthscript: {fileID: 1032904732}
   lerpSpeed: 1
-  currentFill: 0
-  HP: 0
-  maxHP: 0
+  currentFill: 1
+  HP: 1000
+  maxHP: 1000
 --- !u!114 &4994249530384083562
 MonoBehaviour:
   m_ObjectHideFlags: 0
