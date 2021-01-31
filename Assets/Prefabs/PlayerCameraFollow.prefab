@@ -4895,6 +4895,7 @@ GameObject:
   - component: {fileID: 9216676734274492831}
   - component: {fileID: 8083650936235553800}
   - component: {fileID: 7361366033593522906}
+  - component: {fileID: 1405249418}
   m_Layer: 0
   m_Name: PlayerCameraFollow
   m_TagString: Player
@@ -5006,8 +5007,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  health: 10
+  health: 5
   GameObjectToDestroy: {fileID: 0}
+--- !u!65 &1405249418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387990580578086365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 1.58, z: 0}
 --- !u!1 &6081346797060427716
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,8 +5048,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6081346797060427716}
-  m_LocalRotation: {x: 0.16018224, y: -0.000000008492101, z: 0.0000000013780783, w: 0.9870875}
-  m_LocalPosition: {x: 0, y: 5, z: -15}
+  m_LocalRotation: {x: -0.16018222, y: 0.000000015366822, z: -0.0000000024447218, w: -0.9870875}
+  m_LocalPosition: {x: 0.0000004917383, y: 5, z: -15.000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4012309810164643687}
@@ -5433,14 +5447,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6e5c800f314d14ab899ea034c49ab7, type: 3}
---- !u!1 &4387990579750936808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd6e5c800f314d14ab899ea034c49ab7, type: 3}
-  m_PrefabInstance: {fileID: 3468950384773275065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4012309810058951250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd6e5c800f314d14ab899ea034c49ab7, type: 3}
+  m_PrefabInstance: {fileID: 3468950384773275065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4387990579750936808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd6e5c800f314d14ab899ea034c49ab7, type: 3}
   m_PrefabInstance: {fileID: 3468950384773275065}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6081346798214116370
@@ -5488,7 +5502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0000004917383
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5496,23 +5510,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -15.000002
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9870875
+      value: -0.9870875
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018224
+      value: -0.16018222
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000008492101
+      value: 0.000000015366822
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000013780783
+      value: -0.0000000024447218
       objectReference: {fileID: 0}
     - target: {fileID: 746941065357970363, guid: 81f6c17df05680b42a113c61c14f8740, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
