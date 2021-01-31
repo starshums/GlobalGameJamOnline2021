@@ -66,6 +66,7 @@ MonoBehaviour:
   offset: 0
   battery_collider: {fileID: 53111320475385066}
   b_particle: {fileID: 3583956780996151242, guid: 346a41f07d1b3094dbbadf9795b7b2df, type: 3}
+  playerhp: {fileID: 0}
 --- !u!136 &53111320475385066
 CapsuleCollider:
   m_ObjectHideFlags: 0

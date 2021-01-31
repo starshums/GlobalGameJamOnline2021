@@ -9,11 +9,11 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+
         if (health > maxHealth)
         {
             health = maxHealth;
         }
-
     }
 
     public void ChangeHealth(int changeInHealth)

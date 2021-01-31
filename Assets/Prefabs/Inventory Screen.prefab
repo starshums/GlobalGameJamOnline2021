@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8769636858301804336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -183, y: 15}
-  m_SizeDelta: {x: 158.0827, y: 80.589294}
+  m_AnchoredPosition: {x: -354.85278, y: 15}
+  m_SizeDelta: {x: 329.9354, y: 130.9088}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8769636858301804338
 CanvasRenderer:
@@ -89,8 +89,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 23c31b211fe4b834a9f62598500fcc01, type: 2}
-  x_offset: 40
-  y_offset: 40
-  X_space_inbetween: 70
+  slots:
+    item: {fileID: 0}
+    stackAmount: 0
+  x_offset: 60
+  y_offset: 60
+  X_space_inbetween: 90
   Y_space_inbetween: 6
-  Column: 2
+  Column: 5
