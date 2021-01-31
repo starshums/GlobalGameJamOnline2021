@@ -7,13 +7,16 @@ public class Health : MonoBehaviour
     public float maxHealth = 10f;
     public float health;
 
+    private void Awake() {
+        health = maxHealth;    
+    }
+
     private void Start()
     {
-
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
+         if (health > maxHealth)
+          {
+              health = maxHealth;
+          }
     }
 
     public void ChangeHealth(int changeInHealth)
