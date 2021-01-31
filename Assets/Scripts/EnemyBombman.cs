@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(AudioSource))]
 public class EnemyBombman : MonoBehaviour
 {
     Rigidbody rb;
@@ -22,11 +24,15 @@ public class EnemyBombman : MonoBehaviour
     public float damageRadius = 7f;
     public float explosionForce = 500f;
 
+    [SerializeField] AudioClip jumpSound;
+    bool playOnce = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animController = GetComponent<Animator>();
         player = FindObjectOfType<PlayerController>();
+        playOnce = true;
     }
 
     void Update()
@@ -40,14 +46,18 @@ public class EnemyBombman : MonoBehaviour
         if (Vector3.Magnitude(player.gameObject.transform.position - transform.position) < ReactDistance && !canExplode)
         {
             animController.SetBool("Attack", true);
-            rb.AddForce(Vector3.up.normalized * JumpForce, ForceMode.VelocityChange);
+
             GetComponent<NavMeshAgent>().enabled = false;
+            rb.AddForce(Vector3.up.normalized * JumpForce, ForceMode.VelocityChange);
             StartCoroutine(BombDive());
         }
     }
 
     IEnumerator BombDive()
     {
+        AudioSource audioS = GetComponent<AudioSource>();
+        if (audioS && playOnce) audioS.PlayOneShot(jumpSound);
+        playOnce = false;
         yield return new WaitForSeconds(2f);
         rb.isKinematic = true;
         yield return new WaitForSeconds(1f);
@@ -91,7 +101,7 @@ public class EnemyBombman : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                
+
                 //add force
                 rb.AddExplosionForce(explosionForce, transform.position, damageRadius);
                 //damage
