@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     public GameObject skullminionEnemy;
     public float spawnInterval = 5f;
-    public float counter;
+    float counter;
     void Start()
     {
         counter = spawnInterval;
