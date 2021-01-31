@@ -23,6 +23,7 @@ public class Battery : MonoBehaviour
 
     [SerializeField]GameObject b_particle;
 
+
     void Start()
     {
         currPosition = transform.position;
@@ -46,9 +47,9 @@ public class Battery : MonoBehaviour
 
         // more time? 
 
-        // power up ? 
+        // gives player health for now in the player control script!
     }
-     void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
