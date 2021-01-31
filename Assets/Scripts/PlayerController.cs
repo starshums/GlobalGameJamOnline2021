@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     [Header ("Player Movement Settings")]
     private Vector3 moveDirection;
     [SerializeField] float speed = 10f;
+    float maxSpeed;
     [SerializeField] float rotationSmoothness = 2f;
     private CharacterController controller;
     Animator animator;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start () 
     {
+        maxSpeed = speed;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator> ();
 
@@ -111,15 +113,15 @@ public class PlayerController : MonoBehaviour {
 
         GameObject bombToThrow = null;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("FireBomb"))
         {
             bombToThrow = fireBombPrefab;
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("FreezeBomb"))
         {
             bombToThrow = freezeBombPrefab;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("SleepBomb"))
         {
             bombToThrow = sleepBombPrefab;
         }
@@ -127,6 +129,11 @@ public class PlayerController : MonoBehaviour {
         if (bombToThrow != null)
         {
             animator.SetTrigger("Attacking");
+            
+            //ADDED TO ZERO INERTIA IN THE BOMB AND TO GIVE A FEELING OF DARKSOULS
+            speed = 0;
+            Invoke("SetSpeed", 0.7f);
+            
             GameObject bomb = Instantiate(bombToThrow, bombSpawnLocation.position, transform.rotation);
             Rigidbody rb = bomb.GetComponent<Rigidbody>();
             if (rb != null)
@@ -135,7 +142,6 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-
     
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -166,5 +172,10 @@ public class PlayerController : MonoBehaviour {
                 healthScript.ChangeHealth(-1);
             }
         }
+    }
+
+    void SetSpeed()
+    {
+        speed = maxSpeed;
     }
 }

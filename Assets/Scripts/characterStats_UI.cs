@@ -23,8 +23,8 @@ public class characterStats_UI : MonoBehaviour
     {
         content = GetComponent<Image>();
 
-        healthscript.health = HP;
-        healthscript.maxHealth = maxHP;
+        HP = healthscript.health;
+        maxHP = healthscript.maxHealth;
 
     }
 
@@ -41,18 +41,15 @@ public class characterStats_UI : MonoBehaviour
         }
         else
         {
-            HP = HP;
+            HP = healthscript.health;
         }
 
         currentFill = HP / maxHP;
     }
 
-
-
     void Update()
     {
        healthCheck();
-
 
         //HP UI increase and decreasing
         if (currentFill != content.fillAmount)
