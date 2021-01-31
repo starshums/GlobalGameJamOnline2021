@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4792593426414247312}
   - component: {fileID: 4792593426414247313}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PlayerHP-Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,11 +134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994249529631704918, guid: 9e1f4e6eeb1c1184aa47fe4cab4986d4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10.4576
+      value: -18.3397
       objectReference: {fileID: 0}
     - target: {fileID: 4994249529631704918, guid: 9e1f4e6eeb1c1184aa47fe4cab4986d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.2287903
+      value: -1.287796
       objectReference: {fileID: 0}
     - target: {fileID: 4994249529631704919, guid: 9e1f4e6eeb1c1184aa47fe4cab4986d4, type: 3}
       propertyPath: healthscript
