@@ -11598,7 +11598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5002688d91a9f48ac4aac6b8ba8a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currPosition: {x: 32, y: 1, z: 456.7}
+  currPosition: {x: 32, y: 0.5, z: 456.7}
   assetModel: {fileID: 1265750876}
   speed: 2
   magnitude: 0.5
