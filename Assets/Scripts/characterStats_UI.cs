@@ -22,7 +22,7 @@ public class characterStats_UI : MonoBehaviour
     void Start()
     {
         content = GetComponent<Image>();
-
+        healthscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         HP = healthscript.health;
         maxHP = healthscript.maxHealth;
 
