@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour {
         transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, Vector3.zero) * transform.rotation, rotationSmoothness * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.F) && canDash==true)
+        if (Input.GetButton("Dash") && canDash==true)
         {
             Dash();
             isDashing = true;
