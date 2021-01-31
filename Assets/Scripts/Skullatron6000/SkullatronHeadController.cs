@@ -6,6 +6,7 @@ public class SkullatronHeadController : MonoBehaviour {
 
     public Transform skullatron6000HeadModel = null;
     public Transform player;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -15,5 +16,7 @@ public class SkullatronHeadController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         skullatron6000HeadModel.LookAt(player);
+
+        if (isDead) Destroy(this.gameObject);
     }
 }
