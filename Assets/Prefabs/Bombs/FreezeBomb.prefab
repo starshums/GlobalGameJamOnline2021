@@ -136,6 +136,7 @@ MonoBehaviour:
   sleepPS: {fileID: 0}
   radius: 8
   explosionForce: 500
+  isBombActive: 1
   delay: 3
   countdown: 0
   CameraShakeIntensity: 2
@@ -152,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee635cf8dce01f345a8f6c80a1c79308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemObj: {fileID: 11400000, guid: 79ef3ac2bdb35834fa1be0be85c5fcf8, type: 2}
+  itemObj: {fileID: 0}

@@ -39,6 +39,14 @@ public class WoodenBoxHandler : MonoBehaviour
     void RandomCollectable()
     {
         int rand = Random.Range(0,collectables.Length);
-        if (collectables.Length > 0) Instantiate(collectables[rand], transform.position, Quaternion.identity);
+        if (collectables.Length > 0)
+        {
+            GameObject drop = Instantiate(collectables[rand], transform.position, Quaternion.identity);
+            Bomb bombScript = drop.GetComponent<Bomb>();
+            if(bombScript != null)
+            {
+                bombScript.isBombActive = false;
+            }
+        }
     }
 }

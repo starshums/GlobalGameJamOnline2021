@@ -207,6 +207,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb77a68b3dbc617468646e6d1054736f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skullminionEnemy: {fileID: 5160164996603505949, guid: 20eb073f988852744bbaa8cb000cb17c, type: 3}
+  skullminionEnemy: {fileID: 825418696663048916, guid: bdd35c58e0fffca4bb729077e75342a5, type: 3}
   spawnInterval: 5
-  counter: 0
