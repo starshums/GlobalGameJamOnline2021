@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Default_Battery
   m_EditorClassIdentifier: 
   itemName: Battery
-  itemPrefab: {fileID: 9108134683336600943, guid: ec634d4139946eb498259494b61ba1cb, type: 3}
+  itemImage: {fileID: 9108134683336600943, guid: ec634d4139946eb498259494b61ba1cb, type: 3}
   description: 
   MyPowerUpType: 0
