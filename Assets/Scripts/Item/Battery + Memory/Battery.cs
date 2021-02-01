@@ -23,7 +23,7 @@ public class Battery : MonoBehaviour
 
     [SerializeField]GameObject b_particle;
 
-    public Health playerhp;
+    public int recoverHP = 10;
 
 
     void Start()
@@ -52,12 +52,14 @@ public class Battery : MonoBehaviour
 
         // gives player health for now in the player control script!
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other) {
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
+            Health hp = other.GetComponent<Health>();
+            if (hp) hp.ChangeHealth(50);
 
-            playerhp.health += 5f;
+            // playerhp.health += 50f;
 
             Destroy(gameObject);
  
@@ -66,5 +68,6 @@ public class Battery : MonoBehaviour
         {
             Debug.Log("Not a player");
         }
+    }
     }
 }

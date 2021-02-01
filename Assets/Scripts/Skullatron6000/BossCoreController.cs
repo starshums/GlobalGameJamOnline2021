@@ -9,6 +9,8 @@ public class BossCoreController : MonoBehaviour
     [SerializeField] GameObject[] Portals;
     bool changeColor = false;
     Health bossHP;
+
+    [SerializeField] SkullatronHandController skullatronHand;
     internal bool isDead = false;
 
     void Start()
@@ -33,6 +35,8 @@ public class BossCoreController : MonoBehaviour
 
         if (isDead)
         {
+            if (skullatronHand) skullatronHand.isBossDead = true;
+
             foreach (GameObject obj in Portals)
             {
                 Destroy(obj);

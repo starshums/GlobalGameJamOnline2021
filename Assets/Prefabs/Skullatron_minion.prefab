@@ -128,7 +128,8 @@ MonoBehaviour:
   maxHealth: 1
   health: 0
   GameObjectToDestroy: {fileID: 0}
-  itemsToDrop: []
+  itemsToDrop:
+  - {fileID: 2257431492898856325, guid: 9332d1f6b530e5a45ada5621f44b60b1, type: 3}
 --- !u!1001 &859909884359421465
 PrefabInstance:
   m_ObjectHideFlags: 0
