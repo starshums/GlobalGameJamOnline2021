@@ -26,6 +26,4 @@ Evil Skullatron6000 has kidnapped your pet and scattered your memory chips acros
 
 # The Team :man_technologist:
 
-[Arisa Ohashi](https://github.com/VanillaSpace) | [Tintrash](https://github.com/tintrash08)
-
-[Starshums](https://github.com/starshums) | [Philipe Go.](https://github.com/philipe-go)
+[Arisa Ohashi](https://github.com/VanillaSpace) | [Tintrash](https://github.com/tintrash08) | [Starshums](https://github.com/starshums) | [Philipe Go.](https://github.com/philipe-go)
