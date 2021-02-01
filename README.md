@@ -11,7 +11,7 @@
 
 This project was done during the GGJ 2021 (Global Game Jam 2021)
 
-- [GLOBAL GAME JAM] (https://globalgamejam.org/2021/games/team-01-amber-1)
+- [GLOBAL GAME JAM](https://globalgamejam.org/2021/games/team-01-amber-1)
 
 - THEME: ``` Lost and Found ```
 
