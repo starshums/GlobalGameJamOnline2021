@@ -1,12 +1,14 @@
 <h1 align="center">Global Game Jam 2021.</h1>
 
-#######################################################################
+<h1 align="center">#######################################################################</h1>
+
 
 <p align="center"><img src="./media/background.jpg" width="50%" height="50%"></p>
 
-#######################################################################
+<h1 align="center">#######################################################################</h1>
 
 This project was done during the GGJ 2021 (Global Game Jam 2021)
+
 https://globalgamejam.org/2021/games/team-01-amber-1
 
 The theme of the game jam was ``` Lost and Found ```
@@ -22,10 +24,6 @@ Evil Skullatron6000 has kidnapped your pet and scattered your memory chips acros
 
 # The Team :man_technologist:
 
-[Arisa Ohashi](https://github.com/VanillaSpace)
+[Arisa Ohashi](https://github.com/VanillaSpace) | [Tintrash](https://github.com/tintrash08)
 
-[Tintrash](https://github.com/tintrash08)
-
-[Starshums](https://github.com/starshums)
-
-[Philipe Go.](https://github.com/philipe-go)
+[Starshums](https://github.com/starshums) | [Philipe Go.](https://github.com/philipe-go)
