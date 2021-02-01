@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2257431492898856325}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
@@ -65,7 +65,7 @@ MonoBehaviour:
   offset: 0
   battery_collider: {fileID: 2257431492898856323}
   b_particle: {fileID: 0}
-  playerhp: {fileID: 0}
+  recoverHP: 50
 --- !u!1001 &2257431491082328017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,11 +83,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f4c50ea408f3b24ba83657fcac7b1a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.03
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f4c50ea408f3b24ba83657fcac7b1a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9494181
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0f4c50ea408f3b24ba83657fcac7b1a5, type: 3}
       propertyPath: m_LocalPosition.z

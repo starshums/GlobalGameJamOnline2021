@@ -7,11 +7,12 @@ public class BossTrigger : MonoBehaviour
 {
     [SerializeField] AudioClip begin;
     [SerializeField] AudioClip fight;
+    [SerializeField] AudioClip end;
     [SerializeField] AudioClip letsFight;
 
-    void Start() => GetComponent<AudioSource>().PlayOneShot(begin);
+    [SerializeField] SkullatronHandController handController;
 
-    void Update() { }
+    void Start() => GetComponent<AudioSource>().PlayOneShot(begin);
 
     private void OnTriggerEnter(Collider other)
     {

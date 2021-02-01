@@ -1677,6 +1677,8 @@ MonoBehaviour:
   skullatronCore: {fileID: 0}
   cage: {fileID: 104463747}
   handSlam: {fileID: 8300000, guid: 076eb9bbb0f13834a9785769ea9679e1, type: 3}
+  endSong: {fileID: 8300000, guid: 872215593e7893b43828e0631a74d176, type: 3}
+  audioS: {fileID: 1431559684}
   player: {fileID: 0}
   animator: {fileID: 0}
   isBossFightStarted: 0
@@ -6194,6 +6196,7 @@ MonoBehaviour:
   heartMaterial: {fileID: 2100000, guid: 74d348d1b749f8047b4c3d41ab04cd0c, type: 2}
   Portals:
   - {fileID: 1612460440}
+  skullatronHand: {fileID: 0}
 --- !u!114 &1032904732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6206,9 +6209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d5196089ed28541b8cfc31d1966847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  health: 1000
+  maxHealth: 5000
+  health: 5000
   GameObjectToDestroy: {fileID: 919132148980374855}
+  itemsToDrop: []
 --- !u!1001 &1033357156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8103,7 +8107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   begin: {fileID: 8300000, guid: b7f4836944491ab49a56a820214d6125, type: 3}
   fight: {fileID: 8300000, guid: 0afdada10ad619d4e8ddf7b6ec2b6c32, type: 3}
+  end: {fileID: 0}
   letsFight: {fileID: 8300000, guid: ab62bed48e83a734f8d5ecccbbf8a6fb, type: 3}
+  handController: {fileID: 0}
 --- !u!82 &1431559684
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8564,11 +8570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7361366033593522906, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: health
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7361366033593522906, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a1f8835e9d64640a29dbef637d5a37, type: 3}
@@ -12497,7 +12503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8850324225343242588, guid: 32946285146a3714fa964365476c0eae, type: 3}
       propertyPath: spawnInterval
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32946285146a3714fa964365476c0eae, type: 3}

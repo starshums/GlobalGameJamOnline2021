@@ -42,11 +42,11 @@ public class WoodenBoxHandler : MonoBehaviour
         if (collectables.Length > 0)
         {
             GameObject drop = Instantiate(collectables[rand], transform.position, Quaternion.identity);
-            Bomb bombScript = drop.GetComponent<Bomb>();
-            if(bombScript != null)
-            {
-                bombScript.isBombActive = false;
-            }
+            // // Bomb bombScript = drop.GetComponent<Bomb>();
+            // if(bombScript != null)
+            // {
+            //     bombScript.isBombActive = false;
+            // }
         }
     }
 }

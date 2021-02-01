@@ -73,7 +73,7 @@ public class Health : MonoBehaviour
                 break;
             case "Core":
                 Debug.Log("Killed " + transform.tag);
-                Destroy(gameObject);
+                gameObject.GetComponent<BossCoreController>().isDead = true;
                 break;
             default:
                 Debug.Log(transform.name + " has no tag attached");

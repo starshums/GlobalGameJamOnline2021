@@ -10,6 +10,8 @@ public class SkullatronHandController : MonoBehaviour
     [SerializeField] CageHandler cage;
     [Space]
     [SerializeField] AudioClip handSlam;
+    [SerializeField] AudioClip endSong;
+    [SerializeField] AudioSource audioS;
 
     public Transform player;
     private Vector3 defaultPosition = new Vector3(19f, 2.5999999f, -26.7499981f);
@@ -125,6 +127,11 @@ public class SkullatronHandController : MonoBehaviour
     ///</summary>
     private void Death()
     {
+        if (audioS) {
+            audioS.Stop();
+            audioS.PlayOneShot(endSong);
+            audioS.loop = true;
+        }
         if (deadPieces.Length > 0)
         {
             foreach (GameObject piece in deadPieces)
