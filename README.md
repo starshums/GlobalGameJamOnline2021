@@ -3,7 +3,7 @@
 <p align="center">#######################################################################</p>
 
 
-<p align="center"><img src="./media/background.jpg" width="50%" height="50%"></p>
+<p align="center"><img src="./media/background.png" width="50%" height="50%"></p>
 
 <p align="center">#######################################################################</p>
 
@@ -22,7 +22,7 @@ Evil Skullatron6000 has kidnapped your pet and scattered your memory chips acros
 # Play the game! :video_game:  
 - [link 1](https://philipego.itch.io/missing)
 - [link 2](https://eternalodyssey10.itch.io/missing)
-- [link 3](https://eternalodyssey10.itch.io/spook-a-boo)
+
 
 # The Team :man_technologist:
 
