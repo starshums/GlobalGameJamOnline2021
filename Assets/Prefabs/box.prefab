@@ -94,9 +94,11 @@ MonoBehaviour:
   - {fileID: 8536375774163123525}
   collectables:
   - {fileID: 53111320475385045, guid: 5b12a0174c3faa543acab5e29707fe84, type: 3}
+
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+
 --- !u!1 &334765862855552869
 GameObject:
   m_ObjectHideFlags: 0
