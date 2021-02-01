@@ -1,17 +1,19 @@
 <h1 align="center">Global Game Jam 2021.</h1>
 
-<h1 align="center">#######################################################################</h1>
+<p align="center">#######################################################################</p>
 
 
 <p align="center"><img src="./media/background.jpg" width="50%" height="50%"></p>
 
-<h1 align="center">#######################################################################</h1>
+<p align="center">#######################################################################</p>
+
+# Event :joystick:
 
 This project was done during the GGJ 2021 (Global Game Jam 2021)
 
-https://globalgamejam.org/2021/games/team-01-amber-1
+- [GLOBAL GAME JAM] (https://globalgamejam.org/2021/games/team-01-amber-1)
 
-The theme of the game jam was ``` Lost and Found ```
+- THEME: ``` Lost and Found ```
 
 # Missing :game_die: 
 
