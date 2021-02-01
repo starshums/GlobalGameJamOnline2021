@@ -6209,8 +6209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d5196089ed28541b8cfc31d1966847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  health: 1000
+  maxHealth: 5000
+  health: 5000
   GameObjectToDestroy: {fileID: 919132148980374855}
   itemsToDrop: []
 --- !u!1001 &1033357156
@@ -12503,7 +12503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8850324225343242588, guid: 32946285146a3714fa964365476c0eae, type: 3}
       propertyPath: spawnInterval
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32946285146a3714fa964365476c0eae, type: 3}
