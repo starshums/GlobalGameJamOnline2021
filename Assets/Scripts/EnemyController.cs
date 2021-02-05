@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    Rigidbody rb;
     NavMeshAgent agent;
     public float agentSpeed = 3.5f;
     public bool isSkullMinionEnemy = false;
@@ -29,12 +28,13 @@ public class EnemyController : MonoBehaviour
 
     public Transform targetPoint;
     bool isTargetPointSet = false;
+
+    public GameObject[] dropItem;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>().gameObject;
         agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
 
         if (isSkullMinionEnemy)
         {
@@ -54,7 +54,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isSkullMinionEnemy && !IsPlayerClose())
@@ -129,7 +128,6 @@ public class EnemyController : MonoBehaviour
                 agent.SetDestination(targetPoint.position);
             }
         }
-        
     }
 
     void CheckIfReachedTargetPatrolPoint()
@@ -161,16 +159,12 @@ public class EnemyController : MonoBehaviour
     void SleepCondition()
     {
         agent.speed = 0;
-        //rb.constraints = RigidbodyConstraints.FreezePosition;
-        //rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void FrozenCondition()
     {
         agent.speed = 0;
         iceForFrozenCondition.SetActive(true);
-        //rb.constraints = RigidbodyConstraints.FreezePosition;
-        //rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void NormalCondition()
@@ -189,6 +183,14 @@ public class EnemyController : MonoBehaviour
         if (enemySleepingPS.isPlaying)
         {
             enemySleepingPS.Stop();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (isSkullMinionEnemy)
+        {
+            Instantiate(dropItem[Random.Range(0,dropItem.Length)], transform);
         }
     }
 }

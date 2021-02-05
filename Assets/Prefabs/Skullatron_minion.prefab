@@ -84,6 +84,10 @@ MonoBehaviour:
   patrolPointsParent: {fileID: 0}
   patrolPoints: []
   targetPoint: {fileID: 0}
+  dropItem:
+  - {fileID: 6182160531386536975, guid: ca8169dac9c2923428c63f238c360f05, type: 3}
+  - {fileID: 6182160531386536975, guid: e19aa170e6f8cc14680be1826d4ecee9, type: 3}
+  - {fileID: 6182160531386536975, guid: e2a8b4976370a8d45b83b581f541b042, type: 3}
 --- !u!54 &3211197555427796115
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,8 +132,6 @@ MonoBehaviour:
   maxHealth: 1
   health: 0
   GameObjectToDestroy: {fileID: 0}
-  itemsToDrop:
-  - {fileID: 2257431492898856325, guid: 9332d1f6b530e5a45ada5621f44b60b1, type: 3}
 --- !u!1001 &859909884359421465
 PrefabInstance:
   m_ObjectHideFlags: 0

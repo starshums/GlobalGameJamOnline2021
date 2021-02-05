@@ -32,7 +32,6 @@ public class DisplayItem : MonoBehaviour
     void Update()
     {
         updateDisplayInv();
-       
     }
 
     public void updateDisplayInv()
